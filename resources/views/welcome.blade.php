@@ -81,8 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    hehehehgrgfjgd
-                </div>
+                    hehehehgrgfjgd00877
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
