@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentSchoolsTable extends Migration
+class CreateStudentsSchoolsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateStudentSchoolsTable extends Migration
     public function up()
     {
         Schema::create('students_schools', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->timestamps();
         });
     }

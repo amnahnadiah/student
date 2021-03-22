@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubjectEdulevelsTable extends Migration
+class CreateSubjectsEdulevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateSubjectEdulevelsTable extends Migration
     public function up()
     {
         Schema::create('subjects_edulevels', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->timestamps();
         });
     }

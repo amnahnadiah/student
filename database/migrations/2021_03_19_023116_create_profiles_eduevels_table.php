@@ -14,7 +14,7 @@ class CreateProfilesEduevelsTable extends Migration
     public function up()
     {
         Schema::create('profiles_edulevels', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->integer('prof_id');
             $table->integer('edu_id');
             $table->timestamps();

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaymentSubjectsTable extends Migration
+class CreatePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,10 @@ class CreatePaymentSubjectsTable extends Migration
     public function up()
     {
         Schema::create('prices', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('subj_id');
+            $table->integer('edu_id');
+            $table->float('amount');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePaymentSubjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prices'');
+        Schema::dropIfExists('prices');
     }
 }
