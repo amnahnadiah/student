@@ -15,6 +15,8 @@ class CreateProfilesSubjectsTable extends Migration
     {
         Schema::create('profiles_subjects', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('prof_id');
+            $table->integer('subj_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateSubjectsEdulevelsTable extends Migration
     {
         Schema::create('subjects_edulevels', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('subj_id');
+            $table->integer('edu_id');
             $table->timestamps();
         });
     }

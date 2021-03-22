@@ -15,6 +15,8 @@ class CreateProfilesAddressTable extends Migration
     {
         Schema::create('profiles_address', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('prof_id');
+            $table->integer('add_id');
             $table->timestamps();
         });
     }
