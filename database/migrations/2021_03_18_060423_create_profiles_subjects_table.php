@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileClassTable extends Migration
+class CreateProfileSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateProfileClassTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_class', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('profiles_subjects', function (Blueprint $table) {
+            $table->integer('id');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreateProfileClassTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile_class');
+        Schema::dropIfExists('profiles_subjects');
     }
 }
