@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Tuition</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -67,6 +67,7 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <a href="{{ Request::root() }}/profile">Profile</a>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -74,14 +75,18 @@
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
+                            
                         @endif
                     @endauth
+                    
+                    
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    hehehehgrgfjgd00877asdfghjkl
+                    Tuition
+                </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
