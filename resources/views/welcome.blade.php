@@ -68,6 +68,9 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     <a href="{{ Request::root() }}/profile">Profile</a>
+                    <a href="{{ Request::root() }}/subject">Subject</a>
+                    <a href="{{ Request::root() }}/edulevel">Education Level</a>
+                    <a href="{{ Request::root() }}/room">Room</a>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
