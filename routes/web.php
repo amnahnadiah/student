@@ -27,10 +27,3 @@ Route::get('/profile-edit/{id}', 'ProfileController@edit');
 Route::put('/profile-update/{id}', 'ProfileController@update');
 Route::delete('/profile-destroy/{id}', 'ProfileController@destroy');
 
-Route::get('/subject', 'SubjectController@index')->name('subject');
-Route::get('/edulevel', 'EdulevelController@index')->name('edulevel');
-Route::get('/room', 'RoomController@index')->name('room');
-
-Route::resource('subjects','SubjectController');
-Route::resource('edulevels','EdulevelController');
-Route::resource('rooms','RoomController');
