@@ -1,13 +1,13 @@
-@extends('profiles.layout')
+@extends('teachers.layout')
   
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Profile</h2>
+            <h2>Add New Teacher</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ Request::root() }}/profile"> Back</a>
+            <a class="btn btn-primary" href="{{ Request::root() }}/teacher"> Back</a>
         </div>
     </div>
 </div>
@@ -23,44 +23,38 @@
     </div>
 @endif
    
-<form action="{{ url('/profile-create') }}" method="POST">
+<form action="{{ url('/teacher-create') }}" method="POST">
     @csrf
   
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>User ID:</strong>
-                <input type="int" name="user_id" class=form-control placeholder="User ID" value="{{ Auth::user()->id }}">
+                <strong>Profile ID:</strong>
+                <input type="int" name="prof_id" class=form-control placeholder="Profile ID" value="{{ profile()->id }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>First name:</strong>
-                <input type="text" name="f_name" class=form-control placeholder="First name">
+                <strong>Position:</strong>
+                <input type="text" name="position" class=form-control placeholder="Position">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Last name:</strong>
-                <input type="text" name="l_name" class=form-control placeholder="Last name">
+                <strong>Academic Level:</strong>
+                <input type="text" name="acad_level" class=form-control placeholder="Academic Level">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>I/C:</strong>
-                <input type="int" name="ic" class=form-control placeholder="I/C">
+                <strong>Delete ID:</strong>
+                <input type="int" name="deleteId" class=form-control placeholder="Delete ID">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Phone number:</strong>
-                <input type="int" name="phone"class=form-control placeholder="Phone number">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Date of birth:</strong>
-                <input type="date" name="dob" class=form-control placeholder="Date of birth">
+                <strong>Status:</strong>
+                <input type="text" name="status" class=form-control placeholder="Status">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
