@@ -27,6 +27,47 @@ Route::get('/profile-edit/{id}', 'ProfileController@edit');
 Route::put('/profile-update/{id}', 'ProfileController@update');
 Route::delete('/profile-destroy/{id}', 'ProfileController@destroy');
 
+Route::get('/alamat', 'AlamatController@index')->name('alamat');
+Route::get('/alamat-show/{id}', 'AlamatController@show');
+Route::get('/alamat-show/{id}', 'AlamatController@show');
+Route::get('/alamat-create', 'AlamatController@create');
+Route::post('/alamat-create', 'AlamatController@store');
+Route::get('/alamat-edit/{id}', 'AlamatController@edit');
+Route::put('/alamat-update/{id}', 'AlamatController@update');
+Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
+
+Route::get('/teacher', 'TeacherController@index')->name('teacher');
+Route::get('/teacher-show/{id}', 'TeacherController@show');
+Route::get('/teacher-create', 'TeacherController@create');
+Route::post('/teacher-create', 'TeacherController@store');
+Route::get('/teacher-edit/{id}', 'TeacherController@edit');
+Route::put('/teacher-update/{id}', 'TeacherController@update');
+Route::delete('/teacher-destroy/{id}', 'TeacherController@destroy');
+
+Route::get('/student', 'StudentController@index')->name('student');
+Route::get('/student-show/{id}', 'StudentController@show');
+Route::get('/student-create', 'StudentController@create');
+Route::post('/student-create', 'StudentController@store');
+Route::get('/student-edit/{id}', 'StudentController@edit');
+Route::put('/student-update/{id}', 'StudentController@update');
+Route::delete('/student-destroy/{id}', 'StudentController@destroy');
+
+Route::get('/guardian', 'GuardianController@index')->name('guardian');
+Route::get('/guardian-show/{id}', 'GuardianController@show');
+Route::get('/guardian-create', 'GuardianController@create');
+Route::post('/guardian-create', 'GuardianController@store');
+Route::get('/guardian-edit/{id}', 'GuardianController@edit');
+Route::put('/guardian-update/{id}', 'GuardianController@update');
+Route::delete('/guardian-destroy/{id}', 'GuardianController@destroy');
+
+Route::get('/school', 'SchoolController@index')->name('school');
+Route::get('/school-show/{id}', 'SchoolController@show');
+Route::get('/school-create', 'SchoolController@create');
+Route::post('/school-create', 'SchoolController@store');
+Route::get('/school-edit/{id}', 'SchoolController@edit');
+Route::put('/school-update/{id}', 'SchoolController@update');
+Route::delete('/school-destroy/{id}', 'SchoolController@destroy');
+
 Route::get('/subject', 'SubjectController@index')->name('subject');
 Route::get('/subject-show/{id}', 'SubjectController@show');
 Route::get('/subject-create', 'SubjectController@create');
@@ -50,5 +91,7 @@ Route::post('/room-create', 'RoomController@store');
 Route::get('/room-edit/{id}', 'RoomController@edit');
 Route::put('/room-update/{id}', 'RoomController@update');
 Route::delete('/room-destroy/{id}', 'RoomController@destroy');
+
+
 
 
