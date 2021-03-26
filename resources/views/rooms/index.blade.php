@@ -4,10 +4,13 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Tuition Centre</h2>
+                <h2>Room</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('rooms.create') }}"> Create New Room</a>
+                <a class="btn btn-primary" href="{{ url('/') }}"> Back</a>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ Request::root() }}/room-create"> Create New Room</a>
             </div>
         </div>
     </div>
@@ -37,14 +40,17 @@
             <td>{{ $room->location }}</td>
 
             <td>
-                <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
+                <form action="{{ Request::root() }}/room-create" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('rooms.show',$room->id) }}">Show</a>
+                   <a class="btn btn-info" href="{{ Request::root() }}/room-show/{{ $room->id }}room">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('rooms.edit',$room->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ Request::root() }}/room-edit/{{ $room->id }}">Edit</a>
+
+                </form>
    
-                    @csrf
-                    @method('DELETE')
+                    <form action="{{ url('/room-destroy/'.$room->id)}}" method="POST">
+                    {{method_field('DELETE')}}
+                    {{csrf_field()}}
       
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>

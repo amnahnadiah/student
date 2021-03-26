@@ -6,7 +6,7 @@
                 <h2> Show Subject</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('subjects.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ Request::root() }}/subject"> Back</a>
             </div>
         </div>
     </div>

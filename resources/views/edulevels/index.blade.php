@@ -4,10 +4,13 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Tuition Centre</h2>
+                <h2>Education Level</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('edulevels.create') }}"> Create New Edulevel</a>
+                <a class="btn btn-primary" href="{{ url('/') }}"> Back</a>
+            </div>
+             <div class="pull-right">
+                <a class="btn btn-success" href="{{ Request::root() }}/edulevel-create"> Create New Edulevel</a>
             </div>
         </div>
     </div>
@@ -31,15 +34,17 @@
             <td>{{ $edulevel->level }}</td>
             
             <td>
-                <form action="{{ route('edulevels.destroy',$edulevel->id) }}" method="POST">
+                <form action="{{ Request::root() }}/edulevel-create" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('edulevels.show',$edulevel->id) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('edulevels.edit',$edulevel->id) }}">Edit</a>
+                     <a class="btn btn-info" href="{{ Request::root() }}/edulevel-show/{{ $edulevel->id }}">Show</a>
+
+                     <a class="btn btn-info" href="{{ Request::root() }}/edulevel-edit/{{ $edulevel->id }}">Edit</a>
+                </form>
    
-                    @csrf
-                    @method('DELETE')
-      
+                    <form action="{{ url('/edulevel-destroy/'.$edulevel->id)}}" method="POST">
+                        
+                    {{method_field('DELETE')}}
+                    {{csrf_field()}}
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>

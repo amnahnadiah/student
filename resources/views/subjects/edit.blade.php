@@ -7,7 +7,7 @@
                 <h2>Edit Subject</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('subjects.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ Request::root() }}/subject"> Back</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('subjects.update',$subject->id) }}" method="POST">
+      <form action="{{ url('subject-update/'.$subject->id) }}" method="POST">
         @csrf
         @method('PUT')
    

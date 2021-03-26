@@ -5,8 +5,8 @@
             <div class="pull-left">
                 <h2> Show Education level</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('edulevels.index') }}"> Back</a>
+             <div class="pull-right">
+                <a class="btn btn-primary" href="{{ Request::root() }}/edulevel"> Back</a>
             </div>
         </div>
     </div>
