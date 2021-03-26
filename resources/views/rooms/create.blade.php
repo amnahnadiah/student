@@ -6,8 +6,8 @@
         <div class="pull-left">
             <h2>Add New Room</h2>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('rooms.index') }}"> Back</a>
+         <div class="pull-right">
+            <a class="btn btn-primary" href="{{ Request::root() }}/room"> Back</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ route('rooms.store') }}" method="POST">
+<form action="{{ url('/room-create') }}" method="POST">
     @csrf
   
      <div class="row">

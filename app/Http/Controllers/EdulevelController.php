@@ -44,7 +44,7 @@ class EdulevelController extends Controller
         $model ->level = $level;
         $model ->save();
 
-        return redirect()->route('edulevels.index')
+        return redirect()->route('edulevel')
                         ->with('success','Edulevel created successfully.');
     }
 
@@ -54,9 +54,14 @@ class EdulevelController extends Controller
      * @param  \App\Edulevel  $edulevel
      * @return \Illuminate\Http\Response
      */
-    public function show(Edulevel $edulevel)
+    public function show($id)
     {
-        return view('edulevels.show',compact('edulevel'));
+        $model = Edulevel::find($id);
+
+        return view('edulevels.show',[
+            'id' => $id,
+            'edulevel' =>$model,
+        ]);
     }
 
     /**
@@ -65,10 +70,15 @@ class EdulevelController extends Controller
      * @param  \App\Edulevel  $edulevel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Edulevel $edulevel)
+    public function edit($id)
     {
-        return view('edulevels.edit',compact('edulevel'));
-    }
+        $model = Edulevel::find($id);
+
+        return view('edulevels.edit',[
+            'id' => $id,
+            'edulevel' => $model,            
+        ]);
+     }   
 
     /**
      * Update the specified resource in storage.
@@ -77,17 +87,19 @@ class EdulevelController extends Controller
      * @param  \App\Edulevel  $edulevel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Edulevel $edulevel)
+    public function update(Request $request, $id)
     {
-        $id = $edulevel ->id;
         $level = $request -> input('level');
 
-        $model = Edulevel::where('id', $id)->first();
+        $model = Edulevel::find($id);
         $model ->level = $level;
         $model ->save();
 
-         return redirect()->route('edulevels.index')
-                        ->with('success','Edulevel updated successfully');
+         return redirect()->route('edulevel',[
+                                    'id' => $id,
+                            'edulevel' => $model,
+                        ])
+                     ->with('success', 'Edulevel updated successfully');
     }
 
     /**
@@ -96,13 +108,12 @@ class EdulevelController extends Controller
      * @param  \App\Edulevel  $edulevel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Edulevel $edulevel)
+    public function destroy($id)
     {
-        $id = $edulevel ->id;
-        $model = Edulevel::where('id', $id)->delete();
-        //$product->delete();
+        $model = Edulevel::find($id);
+        $model ->delete();
   
-        return redirect()->route('edulevels.index')
+        return redirect()->route('edulevel')
                         ->with('success','Edulevel deleted successfully');
     }
 }

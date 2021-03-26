@@ -6,8 +6,8 @@
             <div class="pull-left">
                 <h2>Edit Education level</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('edulevels.index') }}"> Back</a>
+             <div class="pull-right">
+                <a class="btn btn-primary" href="{{ Request::root() }}/edulevel"> Back</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('edulevels.update',$edulevel->id) }}" method="POST">
+    <form action="{{ url('edulevel-update/'.$edulevel->id) }}" method="POST">
         @csrf
         @method('PUT')
    

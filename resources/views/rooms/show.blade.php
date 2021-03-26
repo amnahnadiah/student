@@ -6,7 +6,7 @@
                 <h2> Show Rooms</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('rooms.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ Request::root() }}/room"> Back</a>
             </div>
         </div>
     </div>

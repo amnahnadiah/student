@@ -38,7 +38,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id => auth()->id();
+        $user_id = auth()->id();
         $f_name = $request->input('f_name');
         $l_name = $request->input('l_name');
         $ic = $request->input('ic');

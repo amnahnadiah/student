@@ -14,7 +14,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects =Subject::latest()->paginate(5);
+        $subjects = Subject::latest()->paginate(5);
   
         return view('subjects.index',compact('subjects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -44,10 +44,10 @@ class SubjectController extends Controller
 
         $model = new subject;
         $model ->name = $name;
-        $model ->descrption = $description;
+        $model ->description = $description;
         $model ->save();
 
-        return redirect()->route('subjects.index')
+        return redirect()->route('subject')
                         ->with('success','Subject created successfully.');
     }
 
@@ -57,9 +57,14 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function show(Subject $subject)
+    public function show($id)
     {
-        return view('subjects.show',compact('subject'));
+        $model = Subject::find($id);
+
+        return view('subjects.show',[
+            'id' => $id, 
+            'subject' => $model,
+        ]);
     }
 
     /**
@@ -68,9 +73,15 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subject $subject)
+    public function edit($id)
     {
-        return view('subjects.edit',compact('subject'));
+        $model = Subject::find($id);
+
+        return view('subjects.edit',[
+            'id' => $id, 
+            'subject' => $model,
+
+        ]);
     }
 
     /**
@@ -80,19 +91,21 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subject $subject)
+    public function update(Request $request, $id)
     {
-        $id = $subject ->id;
         $name = $request -> input('name');
         $description = $request -> input('description');
 
-        $model = Subject::where('id', $id)->first();
+        $model = Subject::find($id);
         $model ->name = $name;
         $model ->description = $description;
       
         $model ->save();
 
-         return redirect()->route('subjects.index')
+         return redirect()->route('subject',[
+                                     'id' => $id, 
+                                   'subject' => $model,
+                                ])
                         ->with('success','Subject updated successfully');
     }
 
@@ -102,13 +115,12 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject)
+    public function destroy($id)
     {
-        $id = $subject ->id;
-        $model = Subject::where('id', $id)->delete();
-        //$product->delete();
+        $model = Subject::find($id);
+        $model ->delete();
   
-        return redirect()->route('students.index')
-                        ->with('success','Student deleted successfully');
+        return redirect()->route('subject')
+                        ->with('success','Subject deleted successfully');
     }
 }

@@ -4,11 +4,15 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Tuition Centre</h2>
+                <h2>Subjects</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('subjects.create') }}"> Create New Subject</a>
+          <div class="pull-right">
+                <a class="btn btn-primary" href="{{ url('/') }}"> Back</a>
             </div>
+           <div class="pull-right">
+                <a class="btn btn-success" href="{{ Request::root() }}/subject-create"> Create New Subject</a>
+            </div>
+
         </div>
     </div>
    
@@ -31,15 +35,16 @@
             <td>{{ $subject->name }}</td>
             <td>{{ $subject->description }}</td>
             <td>
-                <form action="{{ route('subjects.destroy',$subject->id) }}" method="POST">
+                <form action="{{ Request::root() }}/subject-create" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('subjects.show',$subject->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ Request::root() }}/subject-show/{{ $subject->id }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('subjects.edit',$subject->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
+                    <a class="btn btn-info" href="{{ Request::root() }}/subject-edit/{{ $subject->id }}">Edit</a>
+                </form>
+
+                     <form action="{{ url('/subject-destroy/'.$subject->id)}}" method="POST">
+                    {{method_field('DELETE')}}
+                    {{csrf_field()}}
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>

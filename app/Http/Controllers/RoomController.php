@@ -50,7 +50,7 @@ class RoomController extends Controller
         $model ->location = $location;
         $model ->save();
 
-        return redirect()->route('rooms.index')
+        return redirect()->route('room')
                         ->with('success','Room created successfully.');
     }
 
@@ -60,9 +60,14 @@ class RoomController extends Controller
      * @param  \App\Class  $class
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show($id)
     {
-        return view('rooms.show',compact('room'));
+        $model = Room::find($id);
+
+        return view('rooms.show',[
+            'id' => $id,
+            'room' => $model,
+        ]);
     }
 
     /**
@@ -71,10 +76,14 @@ class RoomController extends Controller
      * @param  \App\Class  $class
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit($id)
     {
-        return view('rooms.edit',compact('room'));
+        $model = Room::find($id);
 
+        return view('rooms.edit',[
+            'id' => $id,
+            'room' => $model,
+        ]);
     }
 
     /**
@@ -84,15 +93,14 @@ class RoomController extends Controller
      * @param  \App\Class  $class
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Room $room)
+    public function update(Request $request, $id)
     {
-        $id = $room ->id;
         $name = $request -> input('name');
         $time = $request -> input('time');
         $date = $request -> input('date');
         $location = $request -> input('location');
 
-        $model = Room::where('id', $id)->first();
+        $model = Room::find($id);
         $model ->name = $name;
         $model ->time = $time;
         $model ->date = $date;
@@ -101,7 +109,10 @@ class RoomController extends Controller
 
         $model ->save();
 
-         return redirect()->route('rooms.index')
+         return redirect()->route('room',[
+                            'id' => $id,
+                            'room' => $model,
+                        ])
                         ->with('success','Room updated successfully');
     }
 
@@ -111,13 +122,12 @@ class RoomController extends Controller
      * @param  \App\Class  $class
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy($id)
     {
-        $id = $room ->id;
-        $model = Room::where('id', $id)->delete();
-        //$product->delete();
-  
-        return redirect()->route('rooms.index')
+        $model = Room::find($id);
+        $model ->delete();
+        
+        return redirect()->route('room')
                         ->with('success','Room deleted successfully');
     }
 }
