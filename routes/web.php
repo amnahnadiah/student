@@ -27,7 +27,6 @@ Route::get('/profile-edit/{id}', 'ProfileController@edit');
 Route::put('/profile-update/{id}', 'ProfileController@update');
 Route::delete('/profile-destroy/{id}', 'ProfileController@destroy');
 
-
 Route::get('/alamat', 'AlamatController@index')->name('alamat');
 Route::get('/alamat-show/{id}', 'AlamatController@show');
 Route::get('/alamat-show/{id}', 'AlamatController@show');
@@ -69,7 +68,6 @@ Route::get('/school-edit/{id}', 'SchoolController@edit');
 Route::put('/school-update/{id}', 'SchoolController@update');
 Route::delete('/school-destroy/{id}', 'SchoolController@destroy');
 
-
 Route::get('/subject', 'SubjectController@index')->name('subject');
 Route::get('/subject-show/{id}', 'SubjectController@show');
 Route::get('/subject-create', 'SubjectController@create');
@@ -93,8 +91,3 @@ Route::post('/room-create', 'RoomController@store');
 Route::get('/room-edit/{id}', 'RoomController@edit');
 Route::put('/room-update/{id}', 'RoomController@update');
 Route::delete('/room-destroy/{id}', 'RoomController@destroy');
-
-
-
-
-
