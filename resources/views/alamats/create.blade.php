@@ -1,13 +1,13 @@
-@extends('profiles.layout')
+@extends('alamats.layout')
   
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Profile</h2>
+            <h2>Add New Address</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ Request::root() }}/profile"> Back</a>
+            <a class="btn btn-primary" href="{{ Request::root() }}/alamat"> Back</a>
         </div>
     </div>
 </div>
@@ -23,44 +23,38 @@
     </div>
 @endif
    
-<form action="{{ url('/profile-create') }}" method="POST">
+<form action="{{ url('/alamat-create') }}" method="POST">
     @csrf
   
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>User ID:</strong>
-                <input type="int" name="user_id" class=form-control placeholder="User ID" value="{{ Auth::user()->id }}">
+                <strong>Street:</strong>
+                <input type="text" name="street" class=form-control placeholder="Street">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>First name:</strong>
-                <input type="text" name="f_name" class=form-control placeholder="First name">
+                <strong>City:</strong>
+                <input type="text" name="city" class=form-control placeholder="City">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Last name:</strong>
-                <input type="text" name="l_name" class=form-control placeholder="Last name">
+                <strong>State:</strong>
+                <input type="text" name="state" class=form-control placeholder="State">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>I/C:</strong>
-                <input type="int" name="ic" class=form-control placeholder="I/C">
+                <strong>Zipcode:</strong>
+                <input type="int" name="zipcode"class=form-control placeholder="Zipcode">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Phone number:</strong>
-                <input type="int" name="phone"class=form-control placeholder="Phone number">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Date of birth:</strong>
-                <input type="date" name="dob" class=form-control placeholder="Date of birth">
+                <strong>Country:</strong>
+                <input type="text" name="country" class=form-control placeholder="Country">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

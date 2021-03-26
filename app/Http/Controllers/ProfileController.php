@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -46,7 +48,7 @@ class ProfileController extends Controller
         $dob = $request->input('dob');
         
         $model = new profile;
-        //$model->user_id = Auth::user()->id;
+        $model->user_id = Auth::user()->id;
         $model->f_name = $f_name;
         $model->l_name = $l_name;
         $model->ic = $ic;
@@ -54,7 +56,7 @@ class ProfileController extends Controller
         $model->dob = $dob;
         $model->save();
    
-        return redirect()->route('profiles.index')
+        return redirect()->route('profile')
                         ->with('success','Profile created successfully.');
     }
 
@@ -114,7 +116,7 @@ class ProfileController extends Controller
         $model->dob = $dob;
         $model->save();
 
-        return redirect()->route('profiles.index',[
+        return redirect()->route('profile',[
                                     'id' => $id,
                                     'profile' => $model,
                                 ])
@@ -127,11 +129,12 @@ class ProfileController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(id $id)
+    public function destroy($id)
     {
         $model = Profile::find($id);
+        $model->delete(); 
         
-        return redirect()->route('profiles.index')
+        return redirect()->route('profile')
                         ->with('success','Profile deleted successfully');
     }
 }
