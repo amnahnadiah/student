@@ -19,6 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/admin', function(){echo "Hello Admin";})->middleware('admin');
+
+Route::get('/teacher', function(){echo "Hello Teacher";})->middleware('teacher');
+
+Route::get('/student', function(){echo "Hello Student";})->middleware('student');
+
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile-show/{id}', 'ProfileController@show');
 Route::get('/profile-create', 'ProfileController@create');
