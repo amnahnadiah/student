@@ -18,11 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/admin', function(){echo "Hello Admin";})->middleware('admin');
-
+Route::get('admin/routes', function(){echo "Hello Admin";})->middleware('admin');
 Route::get('/teacher', function(){echo "Hello Teacher";})->middleware('teacher');
-
 Route::get('/student', function(){echo "Hello Student";})->middleware('student');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
