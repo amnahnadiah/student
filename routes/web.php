@@ -37,6 +37,7 @@ Route::get('/alamat-edit/{id}', 'AlamatController@edit');
 Route::put('/alamat-update/{id}', 'AlamatController@update');
 Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
+Route::get('teacher/routes', 'HomeController@teacher')->middleware('teacher');
 Route::get('/teacher-index', 'TeacherController@index')->name('teacher');
 Route::get('/teacher-show/{id}', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create');
@@ -45,6 +46,7 @@ Route::get('/teacher-edit/{id}', 'TeacherController@edit');
 Route::put('/teacher-update/{id}', 'TeacherController@update');
 Route::delete('/teacher-destroy/{id}', 'TeacherController@destroy');
 
+Route::get('student/routes', 'HomeController@student')->middleware('student');
 Route::get('/student-index', 'StudentController@index')->name('student');
 Route::get('/student-show/{id}', 'StudentController@show');
 Route::get('/student-create', 'StudentController@create');
