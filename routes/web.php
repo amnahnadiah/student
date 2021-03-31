@@ -18,9 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('admin/routes', function(){echo "Hello Admin";})->middleware('admin');
-Route::get('/teacher', function(){echo "Hello Teacher";})->middleware('teacher');
-Route::get('/student', function(){echo "Hello Student";})->middleware('student');
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile-show/{id}', 'ProfileController@show');
@@ -39,7 +37,7 @@ Route::get('/alamat-edit/{id}', 'AlamatController@edit');
 Route::put('/alamat-update/{id}', 'AlamatController@update');
 Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
-Route::get('/teacher', 'TeacherController@index')->name('teacher');
+Route::get('/teacher-index', 'TeacherController@index')->name('teacher');
 Route::get('/teacher-show/{id}', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create');
 Route::post('/teacher-create', 'TeacherController@store');
@@ -47,7 +45,7 @@ Route::get('/teacher-edit/{id}', 'TeacherController@edit');
 Route::put('/teacher-update/{id}', 'TeacherController@update');
 Route::delete('/teacher-destroy/{id}', 'TeacherController@destroy');
 
-Route::get('/student', 'StudentController@index')->name('student');
+Route::get('/student-index', 'StudentController@index')->name('student');
 Route::get('/student-show/{id}', 'StudentController@show');
 Route::get('/student-create', 'StudentController@create');
 Route::post('/student-create', 'StudentController@store');

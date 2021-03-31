@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
-use App\Teacher;
-use Illuminate\Http\Request;
-use App\User;
 use Auth;
+use App\Teacher;
+use App\User;
+use App\Profile;
+use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
