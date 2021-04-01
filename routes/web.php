@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +18,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
+Route::get('student/routes', 'HomeController@admin')->middleware('student');
+Route::get('teacher/routes', 'HomeController@admin')->middleware('teacher');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile-show/{id}', 'ProfileController@show');
@@ -37,7 +38,6 @@ Route::get('/alamat-edit/{id}', 'AlamatController@edit');
 Route::put('/alamat-update/{id}', 'AlamatController@update');
 Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
-Route::get('teacher/routes', 'HomeController@teacher')->middleware('teacher');
 Route::get('/teacher-index', 'TeacherController@index')->name('teacher');
 Route::get('/teacher-show/{id}', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create'); 
@@ -46,7 +46,6 @@ Route::get('/teacher-edit/{id}', 'TeacherController@edit');
 Route::put('/teacher-update/{id}', 'TeacherController@update');
 Route::delete('/teacher-destroy/{id}', 'TeacherController@destroy');
 
-Route::get('student/routes', 'HomeController@student')->middleware('student');
 Route::get('/student-index', 'StudentController@index')->name('student');
 Route::get('/student-show/{id}', 'StudentController@show');
 Route::get('/student-create', 'StudentController@create');
