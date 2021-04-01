@@ -77,4 +77,6 @@ class RegisterController extends Controller
             'is_teacher' => $data['is_teacher'],
         ]);
     }
+
 }
+
