@@ -73,8 +73,14 @@
                             </div>
                         </div>
 
+                        <div class="form-check form-switch">
+                        <div class="col-md-3 offset-md-5">
+                            <input class="form-check-input" type="checkbox" id="is_student" name="is_student" value=1>
+                            <label class="form-check-label" for="is_student">Are you a student?</label>
+                        </div>
+
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-2">
+                            <div class="col-md-3 offset-md-5">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

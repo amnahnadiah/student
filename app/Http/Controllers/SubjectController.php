@@ -39,8 +39,8 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-         $name = $request -> input('name');
-         $description = $request -> input('description');
+        $name = $request -> input('name');
+        $description = $request -> input('description');
 
         $model = new subject;
         $model ->name = $name;
