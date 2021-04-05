@@ -10,7 +10,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>User View - Vuexy - Bootstrap HTML admin template</title>
+    <title>User List - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/app-invoice-list.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/plugins/forms/form-validation.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/app-user.css')}}">
     <!-- END: Page CSS-->
 
@@ -422,9 +422,9 @@
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
+                        <li class="active"><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li class="active"><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
+                        <li><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="app-user-edit.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
@@ -715,375 +715,85 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
-                <section class="app-user-view">
-                    <!-- User Card & Plan Starts -->
-                    <div class="row">
-                        <!-- User Card starts-->
-                        <div class="col-xl-9 col-lg-8 col-md-7">
-                            <div class="card user-card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
-                                            <div class="user-avatar-section">
-                                                <div class="d-flex justify-content-start">
-                                                    <img class="img-fluid rounded" src="../../../app-assets/images/avatars/7.png" height="104" width="104" alt="User avatar" />
-                                                    <div class="d-flex flex-column ml-1">
-                                                        <div class="user-info mb-1">
-                                                            <h4 class="mb-0">Eleanor Aguilar</h4>
-                                                            <span class="card-text">eleanor.aguilar@gmail.com</span>
-                                                        </div>
-                                                        <div class="d-flex flex-wrap">
-                                                            <a href="./app-user-edit.html" class="btn btn-primary">Edit</a>
-                                                            <button class="btn btn-outline-danger ml-1">Delete</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex align-items-center user-total-numbers">
-                                                <div class="d-flex align-items-center mr-2">
-                                                    <div class="color-box bg-light-primary">
-                                                        <i data-feather="dollar-sign" class="text-primary"></i>
-                                                    </div>
-                                                    <div class="ml-1">
-                                                        <h5 class="mb-0">23.3k</h5>
-                                                        <small>Monthly Sales</small>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="color-box bg-light-success">
-                                                        <i data-feather="trending-up" class="text-success"></i>
-                                                    </div>
-                                                    <div class="ml-1">
-                                                        <h5 class="mb-0">$99.87K</h5>
-                                                        <small>Annual Profit</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
-                                            <div class="user-info-wrapper">
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="user" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">eleanor.aguilar</p>
-                                                </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="check" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Status</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">Active</p>
-                                                </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="star" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Role</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">Admin</p>
-                                                </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="flag" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Country</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">England</p>
-                                                </div>
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="phone" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Contact</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">(123) 456-7890</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                <!-- users list start -->
+                <section class="app-user-list">
+                    <!-- users filter start -->
+                    <div class="card">
+                        <h5 class="card-header">Search Filter</h5>
+                        <div class="d-flex justify-content-between align-items-center mx-50 row pt-0 pb-2">
+                            <div class="col-md-4 user_role"></div>
+                            <div class="col-md-4 user_plan"></div>
+                            <div class="col-md-4 user_status"></div>
+                        </div>
+                    </div>
+                    <!-- users filter end -->
+                    <!-- list section start -->
+                    <div class="card">
+                        <div class="card-datatable table-responsive pt-0">
+                            <table class="user-list-table table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th></th>
+                                        <th>No</th>
+                                        <th>Grade</th>
+                                        <th>Delete ID</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <!-- Modal to add new user starts-->
+                        <div class="modal modal-slide-in new-user-modal fade" id="modals-slide-in">
+                            <div class="modal-dialog">
+                                <form class="add-new-user modal-content pt-0">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+                                    <div class="modal-header mb-1">
+                                        <h5 class="modal-title" id="exampleModalLabel">New Student</h5>
                                     </div>
-                                </div>
+                                    <div class="modal-body flex-grow-1">
+                                        <div class="form-group">
+                                            <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+                                            <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname" placeholder="John Doe" name="user-fullname" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="basic-icon-default-uname">Username</label>
+                                            <input type="text" id="basic-icon-default-uname" class="form-control dt-uname" placeholder="Web Developer" aria-label="jdoe1" aria-describedby="basic-icon-default-uname2" name="user-name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="basic-icon-default-email">Email</label>
+                                            <input type="text" id="basic-icon-default-email" class="form-control dt-email" placeholder="john.doe@example.com" aria-label="john.doe@example.com" aria-describedby="basic-icon-default-email2" name="user-email" />
+                                            <small class="form-text text-muted"> You can use letters, numbers & periods </small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="user-role">User Role</label>
+                                            <select id="user-role" class="form-control">
+                                                <option value="subscriber">Subscriber</option>
+                                                <option value="editor">Editor</option>
+                                                <option value="maintainer">Maintainer</option>
+                                                <option value="author">Author</option>
+                                                <option value="admin">Admin</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="user-plan">Select Plan</label>
+                                            <select id="user-plan" class="form-control">
+                                                <option value="basic">Basic</option>
+                                                <option value="enterprise">Enterprise</option>
+                                                <option value="company">Company</option>
+                                                <option value="team">Team</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mr-1 data-submit">Submit</button>
+                                        <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <!-- /User Card Ends-->
-
-                        <!-- Plan Card starts-->
-                        <div class="col-xl-3 col-lg-4 col-md-5">
-                            <div class="card plan-card border-primary">
-                                <div class="card-header d-flex justify-content-between align-items-center pt-75 pb-1">
-                                    <h5 class="mb-0">Current Plan</h5>
-                                    <span class="badge badge-light-secondary" data-toggle="tooltip" data-placement="top" title="Expiry Date">July 22, <span class="nextYear"></span>
-                                    </span>
-                                </div>
-                                <div class="card-body">
-                                    <div class="badge badge-light-primary">Basic</div>
-                                    <ul class="list-unstyled my-1">
-                                        <li>
-                                            <span class="align-middle">5 Users</span>
-                                        </li>
-                                        <li class="my-25">
-                                            <span class="align-middle">10 GB storage</span>
-                                        </li>
-                                        <li>
-                                            <span class="align-middle">Basic Support</span>
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary text-center btn-block">Upgrade Plan</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Plan CardEnds -->
+                        <!-- Modal to add new user Ends-->
                     </div>
-                    <!-- User Card & Plan Ends -->
-
-                    <!-- User Timeline & Permissions Starts -->
-                    <div class="row">
-                        <!-- information starts -->
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-2">User Timeline</h4>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="timeline">
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>12 Invoices have been paid</h6>
-                                                    <span class="timeline-event-time">12 min ago</span>
-                                                </div>
-                                                <p>Invoices have been paid to the company.</p>
-                                                <div class="media align-items-center">
-                                                    <img class="mr-1" src="../../../app-assets/images/icons/file-icons/pdf.png" alt="invoice" height="23" />
-                                                    <div class="media-body">invoice.pdf</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>Client Meeting</h6>
-                                                    <span class="timeline-event-time">45 min ago</span>
-                                                </div>
-                                                <p>Project meeting with john @10:15am.</p>
-                                                <div class="media align-items-center">
-                                                    <div class="avatar">
-                                                        <img src="../../../app-assets/images/avatars/12-small.png" alt="avatar" height="38" width="38" />
-                                                    </div>
-                                                    <div class="media-body ml-50">
-                                                        <h6 class="mb-0">John Doe (Client)</h6>
-                                                        <span>CEO of Infibeam</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-info timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>Create a new project for client</h6>
-                                                    <span class="timeline-event-time">2 days ago</span>
-                                                </div>
-                                                <p class="mb-0">Add files to new design folder</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- information Ends -->
-
-                        <!-- User Permissions Starts -->
-                        <div class="col-md-6">
-                            <!-- User Permissions -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Permissions</h4>
-                                </div>
-                                <p class="card-text ml-2">Permission according to roles</p>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-borderless">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>Module</th>
-                                                <th>Read</th>
-                                                <th>Write</th>
-                                                <th>Create</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-read" checked disabled />
-                                                        <label class="custom-control-label" for="admin-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-write" disabled />
-                                                        <label class="custom-control-label" for="admin-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-create" disabled />
-                                                        <label class="custom-control-label" for="admin-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-delete" disabled />
-                                                        <label class="custom-control-label" for="admin-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Staff</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-read" disabled />
-                                                        <label class="custom-control-label" for="staff-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-write" checked disabled />
-                                                        <label class="custom-control-label" for="staff-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-create" disabled />
-                                                        <label class="custom-control-label" for="staff-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-delete" disabled />
-                                                        <label class="custom-control-label" for="staff-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Author</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-read" checked disabled />
-                                                        <label class="custom-control-label" for="author-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-write" disabled />
-                                                        <label class="custom-control-label" for="author-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-create" checked disabled />
-                                                        <label class="custom-control-label" for="author-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-delete" disabled />
-                                                        <label class="custom-control-label" for="author-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Contributor</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-read" disabled />
-                                                        <label class="custom-control-label" for="contributor-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-write" disabled />
-                                                        <label class="custom-control-label" for="contributor-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-create" disabled />
-                                                        <label class="custom-control-label" for="contributor-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-delete" disabled />
-                                                        <label class="custom-control-label" for="contributor-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-read" disabled />
-                                                        <label class="custom-control-label" for="user-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-create" disabled />
-                                                        <label class="custom-control-label" for="user-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-write" disabled />
-                                                        <label class="custom-control-label" for="user-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-delete" checked disabled />
-                                                        <label class="custom-control-label" for="user-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /User Permissions -->
-                        </div>
-                        <!-- User Permissions Ends -->
-                    </div>
-                    <!-- User Timeline & Permissions Ends -->
-
-                    <!-- User Invoice Starts-->
-                    <div class="row invoice-list-wrapper">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-datatable table-responsive">
-                                    <table class="invoice-list-table table">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>#</th>
-                                                <th><i data-feather="trending-up"></i></th>
-                                                <th>No</th>
-                                                <th>Grade</th>
-                                                <th class="text-truncate">Issued Date</th>
-                                                <th>Delete ID</th>
-                                                <th>Status</th>
-                                                <th class="cell-fit">Actions</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /User Invoice Ends-->
+                    <!-- list section end -->
                 </section>
+                <!-- users list ends -->
 
             </div>
         </div>
@@ -1106,13 +816,13 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('templates/app-assets/vendors/js/extensions/moment.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -1121,7 +831,7 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-view.js')}}"></script>
+    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-list.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>

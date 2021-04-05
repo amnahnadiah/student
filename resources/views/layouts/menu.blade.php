@@ -10,16 +10,15 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>User View - Vuexy - Bootstrap HTML admin template</title>
+    <title>Dashboard ecommerce - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/charts/apexcharts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/extensions/toastr.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -32,12 +31,13 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/app-invoice-list.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/app-user.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/dashboard-ecommerce.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/plugins/charts/chart-apex.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/plugins/extensions/ext-component-toastr.css')}}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('templates/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -378,7 +378,7 @@
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="Analytics">Analytics</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
+                        <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
                         </li>
                     </ul>
                 </li>
@@ -424,7 +424,7 @@
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li class="active"><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
+                        <li><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="app-user-edit.html"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
@@ -715,87 +715,85 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
-                <section class="app-user-view">
-                    <!-- User Card & Plan Starts -->
-                    <div class="row">
-                        <!-- User Card starts-->
-                        <div class="col-xl-9 col-lg-8 col-md-7">
-                            <div class="card user-card">
+                <!-- Dashboard Ecommerce Starts -->
+                <section id="dashboard-ecommerce">
+                    <div class="row match-height">
+                        <!-- Medal Card -->
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card card-congratulation-medal">
                                 <div class="card-body">
+                                    <h5>Congratulations 🎉 John!</h5>
+                                    <p class="card-text font-small-3">You have won gold medal</p>
+                                    <h3 class="mb-75 mt-2 pt-50">
+                                        <a href="javascript:void(0);">$48.9k</a>
+                                    </h3>
+                                    <button type="button" class="btn btn-primary">View Sales</button>
+                                    <img src="../../../app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Medal Card -->
+
+                        <!-- Statistics Card -->
+                        <div class="col-xl-8 col-md-6 col-12">
+                            <div class="card card-statistics">
+                                <div class="card-header">
+                                    <h4 class="card-title">Statistics</h4>
+                                    <div class="d-flex align-items-center">
+                                        <p class="card-text font-small-2 mr-25 mb-0">Updated 1 month ago</p>
+                                    </div>
+                                </div>
+                                <div class="card-body statistics-body">
                                     <div class="row">
-                                        <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
-                                            <div class="user-avatar-section">
-                                                <div class="d-flex justify-content-start">
-                                                    <img class="img-fluid rounded" src="../../../app-assets/images/avatars/7.png" height="104" width="104" alt="User avatar" />
-                                                    <div class="d-flex flex-column ml-1">
-                                                        <div class="user-info mb-1">
-                                                            <h4 class="mb-0">Eleanor Aguilar</h4>
-                                                            <span class="card-text">eleanor.aguilar@gmail.com</span>
-                                                        </div>
-                                                        <div class="d-flex flex-wrap">
-                                                            <a href="./app-user-edit.html" class="btn btn-primary">Edit</a>
-                                                            <button class="btn btn-outline-danger ml-1">Delete</button>
-                                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                            <div class="media">
+                                                <div class="avatar bg-light-primary mr-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="trending-up" class="avatar-icon"></i>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="d-flex align-items-center user-total-numbers">
-                                                <div class="d-flex align-items-center mr-2">
-                                                    <div class="color-box bg-light-primary">
-                                                        <i data-feather="dollar-sign" class="text-primary"></i>
-                                                    </div>
-                                                    <div class="ml-1">
-                                                        <h5 class="mb-0">23.3k</h5>
-                                                        <small>Monthly Sales</small>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="color-box bg-light-success">
-                                                        <i data-feather="trending-up" class="text-success"></i>
-                                                    </div>
-                                                    <div class="ml-1">
-                                                        <h5 class="mb-0">$99.87K</h5>
-                                                        <small>Annual Profit</small>
-                                                    </div>
+                                                <div class="media-body my-auto">
+                                                    <h4 class="font-weight-bolder mb-0">230k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Sales</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
-                                            <div class="user-info-wrapper">
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="user" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                            <div class="media">
+                                                <div class="avatar bg-light-info mr-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="user" class="avatar-icon"></i>
                                                     </div>
-                                                    <p class="card-text mb-0">eleanor.aguilar</p>
                                                 </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="check" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Status</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">Active</p>
+                                                <div class="media-body my-auto">
+                                                    <h4 class="font-weight-bolder mb-0">8.549k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Customers</p>
                                                 </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="star" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Role</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                            <div class="media">
+                                                <div class="avatar bg-light-danger mr-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="box" class="avatar-icon"></i>
                                                     </div>
-                                                    <p class="card-text mb-0">Admin</p>
                                                 </div>
-                                                <div class="d-flex flex-wrap my-50">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="flag" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Country</span>
-                                                    </div>
-                                                    <p class="card-text mb-0">England</p>
+                                                <div class="media-body my-auto">
+                                                    <h4 class="font-weight-bolder mb-0">1.423k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Products</p>
                                                 </div>
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="user-info-title">
-                                                        <i data-feather="phone" class="mr-1"></i>
-                                                        <span class="card-text user-info-title font-weight-bold mb-0">Contact</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12">
+                                            <div class="media">
+                                                <div class="avatar bg-light-success mr-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="dollar-sign" class="avatar-icon"></i>
                                                     </div>
-                                                    <p class="card-text mb-0">(123) 456-7890</p>
+                                                </div>
+                                                <div class="media-body my-auto">
+                                                    <h4 class="font-weight-bolder mb-0">$9745</h4>
+                                                    <p class="card-text font-small-3 mb-0">Revenue</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -803,287 +801,647 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /User Card Ends-->
+                        <!--/ Statistics Card -->
+                    </div>
 
-                        <!-- Plan Card starts-->
-                        <div class="col-xl-3 col-lg-4 col-md-5">
-                            <div class="card plan-card border-primary">
-                                <div class="card-header d-flex justify-content-between align-items-center pt-75 pb-1">
-                                    <h5 class="mb-0">Current Plan</h5>
-                                    <span class="badge badge-light-secondary" data-toggle="tooltip" data-placement="top" title="Expiry Date">July 22, <span class="nextYear"></span>
-                                    </span>
+                    <div class="row match-height">
+                        <div class="col-lg-4 col-12">
+                            <div class="row match-height">
+                                <!-- Bar Chart - Orders -->
+                                <div class="col-lg-6 col-md-3 col-6">
+                                    <div class="card">
+                                        <div class="card-body pb-50">
+                                            <h6>Orders</h6>
+                                            <h2 class="font-weight-bolder mb-1">2,76k</h2>
+                                            <div id="statistics-order-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Bar Chart - Orders -->
+
+                                <!-- Line Chart - Profit -->
+                                <div class="col-lg-6 col-md-3 col-6">
+                                    <div class="card card-tiny-line-stats">
+                                        <div class="card-body pb-50">
+                                            <h6>Profit</h6>
+                                            <h2 class="font-weight-bolder mb-1">6,24k</h2>
+                                            <div id="statistics-profit-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Line Chart - Profit -->
+
+                                <!-- Earnings Card -->
+                                <div class="col-lg-12 col-md-6 col-12">
+                                    <div class="card earnings-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h4 class="card-title mb-1">Earnings</h4>
+                                                    <div class="font-small-2">This Month</div>
+                                                    <h5 class="mb-1">$4055.56</h5>
+                                                    <p class="card-text text-muted font-small-2">
+                                                        <span class="font-weight-bolder">68.2%</span><span> more earnings than last month.</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div id="earnings-chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Earnings Card -->
+                            </div>
+                        </div>
+
+                        <!-- Revenue Report Card -->
+                        <div class="col-lg-8 col-12">
+                            <div class="card card-revenue-budget">
+                                <div class="row mx-0">
+                                    <div class="col-md-8 col-12 revenue-report-wrapper">
+                                        <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="card-title mb-50 mb-sm-0">Revenue Report</h4>
+                                            <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center mr-2">
+                                                    <span class="bullet bullet-primary font-small-3 mr-50 cursor-pointer"></span>
+                                                    <span>Earning</span>
+                                                </div>
+                                                <div class="d-flex align-items-center ml-75">
+                                                    <span class="bullet bullet-warning font-small-3 mr-50 cursor-pointer"></span>
+                                                    <span>Expense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="revenue-report-chart"></div>
+                                    </div>
+                                    <div class="col-md-4 col-12 budget-wrapper">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2020
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                                                <a class="dropdown-item" href="javascript:void(0);">2018</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="mb-25">$25,852</h2>
+                                        <div class="d-flex justify-content-center">
+                                            <span class="font-weight-bolder mr-25">Budget:</span>
+                                            <span>56,800</span>
+                                        </div>
+                                        <div id="budget-chart"></div>
+                                        <button type="button" class="btn btn-primary">Increase Budget</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Revenue Report Card -->
+                    </div>
+
+                    <div class="row match-height">
+                        <!-- Company Table Card -->
+                        <div class="col-lg-8 col-12">
+                            <div class="card card-company-table">
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Company</th>
+                                                    <th>Category</th>
+                                                    <th>Views</th>
+                                                    <th>Revenue</th>
+                                                    <th>Sales</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/toolbox.svg" alt="Toolbar svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Dixons</div>
+                                                                <div class="font-small-2 text-muted">meguc@ruj.io</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-primary mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="monitor" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Technology</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">23.4k</span>
+                                                            <span class="font-small-2 text-muted">in 24 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$891.2</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">68%</span>
+                                                            <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/parachute.svg" alt="Parachute svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Motels</div>
+                                                                <div class="font-small-2 text-muted">vecav@hodzi.co.uk</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-success mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="coffee" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Grocery</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">78k</span>
+                                                            <span class="font-small-2 text-muted">in 2 days</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$668.51</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">97%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/brush.svg" alt="Brush svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Zipcar</div>
+                                                                <div class="font-small-2 text-muted">davcilse@is.gov</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">162</span>
+                                                            <span class="font-small-2 text-muted">in 5 days</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$522.29</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">62%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/star.svg" alt="Star svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Owning</div>
+                                                                <div class="font-small-2 text-muted">us@cuhil.gov</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-primary mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="monitor" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Technology</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">214</span>
+                                                            <span class="font-small-2 text-muted">in 24 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$291.01</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">88%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/book.svg" alt="Book svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Cafés</div>
+                                                                <div class="font-small-2 text-muted">pudais@jife.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-success mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="coffee" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Grocery</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">208</span>
+                                                            <span class="font-small-2 text-muted">in 1 week</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$783.93</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">16%</span>
+                                                            <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/rocket.svg" alt="Rocket svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Kmart</div>
+                                                                <div class="font-small-2 text-muted">bipri@cawiw.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">990</span>
+                                                            <span class="font-small-2 text-muted">in 1 month</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$780.05</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">78%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="../../../app-assets/images/icons/speaker.svg" alt="Speaker svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="font-weight-bolder">Payers</div>
+                                                                <div class="font-small-2 text-muted">luk@izug.io</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning mr-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="font-weight-bolder mb-25">12.9k</span>
+                                                            <span class="font-small-2 text-muted">in 12 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$531.49</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-weight-bolder mr-1">42%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Company Table Card -->
+
+                        <!-- Developer Meetup Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-developer-meetup">
+                                <div class="meetup-img-wrapper rounded-top text-center">
+                                    <img src="../../../app-assets/images/illustration/email.svg" alt="Meeting Pic" height="170" />
                                 </div>
                                 <div class="card-body">
-                                    <div class="badge badge-light-primary">Basic</div>
-                                    <ul class="list-unstyled my-1">
-                                        <li>
-                                            <span class="align-middle">5 Users</span>
-                                        </li>
-                                        <li class="my-25">
-                                            <span class="align-middle">10 GB storage</span>
-                                        </li>
-                                        <li>
-                                            <span class="align-middle">Basic Support</span>
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary text-center btn-block">Upgrade Plan</button>
+                                    <div class="meetup-header d-flex align-items-center">
+                                        <div class="meetup-day">
+                                            <h6 class="mb-0">THU</h6>
+                                            <h3 class="mb-0">24</h3>
+                                        </div>
+                                        <div class="my-auto">
+                                            <h4 class="card-title mb-25">Developer Meetup</h4>
+                                            <p class="card-text mb-0">Meet world popular developers</p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="avatar bg-light-primary rounded mr-1">
+                                            <div class="avatar-content">
+                                                <i data-feather="calendar" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Sat, May 25, 2020</h6>
+                                            <small>10:AM to 6:PM</small>
+                                        </div>
+                                    </div>
+                                    <div class="media mt-2">
+                                        <div class="avatar bg-light-primary rounded mr-1">
+                                            <div class="avatar-content">
+                                                <i data-feather="map-pin" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Central Park</h6>
+                                            <small>Manhattan, New york City</small>
+                                        </div>
+                                    </div>
+                                    <div class="avatar-group">
+                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Billy Hopkins" class="avatar pull-up">
+                                            <img src="../../../app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Amy Carson" class="avatar pull-up">
+                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Brandon Miles" class="avatar pull-up">
+                                            <img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Daisy Weber" class="avatar pull-up">
+                                            <img src="../../../app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Jenny Looper" class="avatar pull-up">
+                                            <img src="../../../app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <h6 class="align-self-center cursor-pointer ml-50 mb-0">+42</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /Plan CardEnds -->
-                    </div>
-                    <!-- User Card & Plan Ends -->
+                        <!--/ Developer Meetup Card -->
 
-                    <!-- User Timeline & Permissions Starts -->
-                    <div class="row">
-                        <!-- information starts -->
-                        <div class="col-md-6">
-                            <div class="card">
+                        <!-- Browser States Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-browser-states">
                                 <div class="card-header">
-                                    <h4 class="card-title mb-2">User Timeline</h4>
+                                    <div>
+                                        <h4 class="card-title">Browser States</h4>
+                                        <p class="card-text font-small-2">Counter August 2020</p>
+                                    </div>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
-                                    <ul class="timeline">
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>12 Invoices have been paid</h6>
-                                                    <span class="timeline-event-time">12 min ago</span>
-                                                </div>
-                                                <p>Invoices have been paid to the company.</p>
-                                                <div class="media align-items-center">
-                                                    <img class="mr-1" src="../../../app-assets/images/icons/file-icons/pdf.png" alt="invoice" height="23" />
-                                                    <div class="media-body">invoice.pdf</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>Client Meeting</h6>
-                                                    <span class="timeline-event-time">45 min ago</span>
-                                                </div>
-                                                <p>Project meeting with john @10:15am.</p>
-                                                <div class="media align-items-center">
-                                                    <div class="avatar">
-                                                        <img src="../../../app-assets/images/avatars/12-small.png" alt="avatar" height="38" width="38" />
-                                                    </div>
-                                                    <div class="media-body ml-50">
-                                                        <h6 class="mb-0">John Doe (Client)</h6>
-                                                        <span>CEO of Infibeam</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <span class="timeline-point timeline-point-info timeline-point-indicator"></span>
-                                            <div class="timeline-event">
-                                                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                                                    <h6>Create a new project for client</h6>
-                                                    <span class="timeline-event-time">2 days ago</span>
-                                                </div>
-                                                <p class="mb-0">Add files to new design folder</p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <div class="browser-states">
+                                        <div class="media">
+                                            <img src="../../../app-assets/images/icons/google-chrome.png" class="rounded mr-1" height="30" alt="Google Chrome" />
+                                            <h6 class="align-self-center mb-0">Google Chrome</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="font-weight-bold text-body-heading mr-1">54.4%</div>
+                                            <div id="browser-state-chart-primary"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="media">
+                                            <img src="../../../app-assets/images/icons/mozila-firefox.png" class="rounded mr-1" height="30" alt="Mozila Firefox" />
+                                            <h6 class="align-self-center mb-0">Mozila Firefox</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="font-weight-bold text-body-heading mr-1">6.1%</div>
+                                            <div id="browser-state-chart-warning"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="media">
+                                            <img src="../../../app-assets/images/icons/apple-safari.png" class="rounded mr-1" height="30" alt="Apple Safari" />
+                                            <h6 class="align-self-center mb-0">Apple Safari</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="font-weight-bold text-body-heading mr-1">14.6%</div>
+                                            <div id="browser-state-chart-secondary"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="media">
+                                            <img src="../../../app-assets/images/icons/internet-explorer.png" class="rounded mr-1" height="30" alt="Internet Explorer" />
+                                            <h6 class="align-self-center mb-0">Internet Explorer</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="font-weight-bold text-body-heading mr-1">4.2%</div>
+                                            <div id="browser-state-chart-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="media">
+                                            <img src="../../../app-assets/images/icons/opera.png" class="rounded mr-1" height="30" alt="Opera Mini" />
+                                            <h6 class="align-self-center mb-0">Opera Mini</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="font-weight-bold text-body-heading mr-1">8.4%</div>
+                                            <div id="browser-state-chart-danger"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- information Ends -->
+                        <!--/ Browser States Card -->
 
-                        <!-- User Permissions Starts -->
-                        <div class="col-md-6">
-                            <!-- User Permissions -->
+                        <!-- Goal Overview Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
                             <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4 class="card-title">Goal Overview</h4>
+                                    <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="goal-overview-radial-bar-chart" class="my-2"></div>
+                                    <div class="row border-top text-center mx-0">
+                                        <div class="col-6 border-right py-1">
+                                            <p class="card-text text-muted mb-0">Completed</p>
+                                            <h3 class="font-weight-bolder mb-0">786,617</h3>
+                                        </div>
+                                        <div class="col-6 py-1">
+                                            <p class="card-text text-muted mb-0">In Progress</p>
+                                            <h3 class="font-weight-bolder mb-0">13,561</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Goal Overview Card -->
+
+                        <!-- Transaction Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-transaction">
                                 <div class="card-header">
-                                    <h4 class="card-title">Permissions</h4>
+                                    <h4 class="card-title">Transactions</h4>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="card-text ml-2">Permission according to roles</p>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-borderless">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>Module</th>
-                                                <th>Read</th>
-                                                <th>Write</th>
-                                                <th>Create</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-read" checked disabled />
-                                                        <label class="custom-control-label" for="admin-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-write" disabled />
-                                                        <label class="custom-control-label" for="admin-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-create" disabled />
-                                                        <label class="custom-control-label" for="admin-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="admin-delete" disabled />
-                                                        <label class="custom-control-label" for="admin-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Staff</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-read" disabled />
-                                                        <label class="custom-control-label" for="staff-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-write" checked disabled />
-                                                        <label class="custom-control-label" for="staff-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-create" disabled />
-                                                        <label class="custom-control-label" for="staff-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="staff-delete" disabled />
-                                                        <label class="custom-control-label" for="staff-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Author</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-read" checked disabled />
-                                                        <label class="custom-control-label" for="author-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-write" disabled />
-                                                        <label class="custom-control-label" for="author-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-create" checked disabled />
-                                                        <label class="custom-control-label" for="author-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="author-delete" disabled />
-                                                        <label class="custom-control-label" for="author-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Contributor</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-read" disabled />
-                                                        <label class="custom-control-label" for="contributor-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-write" disabled />
-                                                        <label class="custom-control-label" for="contributor-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-create" disabled />
-                                                        <label class="custom-control-label" for="contributor-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="contributor-delete" disabled />
-                                                        <label class="custom-control-label" for="contributor-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>User</td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-read" disabled />
-                                                        <label class="custom-control-label" for="user-read"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-create" disabled />
-                                                        <label class="custom-control-label" for="user-create"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-write" disabled />
-                                                        <label class="custom-control-label" for="user-write"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="user-delete" checked disabled />
-                                                        <label class="custom-control-label" for="user-delete"></label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /User Permissions -->
-                        </div>
-                        <!-- User Permissions Ends -->
-                    </div>
-                    <!-- User Timeline & Permissions Ends -->
-
-                    <!-- User Invoice Starts-->
-                    <div class="row invoice-list-wrapper">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-datatable table-responsive">
-                                    <table class="invoice-list-table table">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>#</th>
-                                                <th><i data-feather="trending-up"></i></th>
-                                                <th>No</th>
-                                                <th>Grade</th>
-                                                <th class="text-truncate">Issued Date</th>
-                                                <th>Delete ID</th>
-                                                <th>Status</th>
-                                                <th class="cell-fit">Actions</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                                <div class="card-body">
+                                    <div class="transaction-item">
+                                        <div class="media">
+                                            <div class="avatar bg-light-primary rounded">
+                                                <div class="avatar-content">
+                                                    <i data-feather="pocket" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="transaction-title">Wallet</h6>
+                                                <small>Starbucks</small>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bolder text-danger">- $74</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="media">
+                                            <div class="avatar bg-light-success rounded">
+                                                <div class="avatar-content">
+                                                    <i data-feather="check" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="transaction-title">Bank Transfer</h6>
+                                                <small>Add Money</small>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bolder text-success">+ $480</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="media">
+                                            <div class="avatar bg-light-danger rounded">
+                                                <div class="avatar-content">
+                                                    <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="transaction-title">Paypal</h6>
+                                                <small>Add Money</small>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bolder text-success">+ $590</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="media">
+                                            <div class="avatar bg-light-warning rounded">
+                                                <div class="avatar-content">
+                                                    <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="transaction-title">Mastercard</h6>
+                                                <small>Ordered Food</small>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bolder text-danger">- $23</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="media">
+                                            <div class="avatar bg-light-info rounded">
+                                                <div class="avatar-content">
+                                                    <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="transaction-title">Transfer</h6>
+                                                <small>Refund</small>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bolder text-success">+ $98</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!--/ Transaction Card -->
                     </div>
-                    <!-- /User Invoice Ends-->
                 </section>
+                <!-- Dashboard Ecommerce ends -->
 
             </div>
         </div>
@@ -1106,13 +1464,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('templates/app-assets/vendors/js/extensions/moment.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -1121,7 +1474,7 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-view.js')}}"></script>
+    <script src="{{asset('templates/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>
