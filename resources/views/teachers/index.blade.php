@@ -1,4 +1,4 @@
-@extends('teachers.layout')
+@extends('teachers.menu')
  
 @section('content')
     <div class="row">
