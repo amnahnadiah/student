@@ -40,7 +40,7 @@ Route::put('/alamat-update/{id}', 'AlamatController@update');
 Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
 Route::get('/teacher-index', 'TeacherController@index')->name('teacher');
-Route::get('/teacher-show/{id}', 'TeacherController@show');
+Route::get('/teacher-show', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create'); 
 Route::post('/teacher-create', 'TeacherController@store');
 Route::get('/teacher-edit/{id}', 'TeacherController@edit');
@@ -54,6 +54,7 @@ Route::post('/student-create', 'StudentController@store');
 Route::get('/student-edit/{id}', 'StudentController@edit');
 Route::put('/student-update/{id}', 'StudentController@update');
 Route::delete('/student-destroy/{id}', 'StudentController@destroy');
+Route::get('/student-new', 'StudentController@new');
 
 Route::get('/guardian', 'GuardianController@index')->name('guardian');
 Route::get('/guardian-show/{id}', 'GuardianController@show');

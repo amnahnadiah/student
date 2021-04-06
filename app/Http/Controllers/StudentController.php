@@ -30,6 +30,12 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      public function new()
+    {
+        return view('students.new');
+    }
+
     public function create()
     {
         return view('students.create');
