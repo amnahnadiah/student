@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Teacher;
 use App\User;
 use App\Profile;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -19,8 +19,13 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::latest()->paginate(5);
   
-        return view('teachers.index',compact('teachers'))
+        return view('teachers.menu',compact('teachers'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function kosong()
+    {
+        return view('teachers.kosong');
     }
 
     /**

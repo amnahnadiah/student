@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 Route::get('student/routes', 'HomeController@student')->middleware('student');
 Route::get('teacher/routes', 'HomeController@teacher')->middleware('teacher');
+Route::get('/kosong', 'TeacherController@kosong');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile-show/{id}', 'ProfileController@show');
