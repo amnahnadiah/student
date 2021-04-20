@@ -56,6 +56,31 @@
             </td>
         </tr>
         @endforeach
+        <!-- @foreach ($teachers as $teacher)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $teacher->teacherProfile->f_name }}</td>
+            <td>{{ $teacher->teacherProfile->l_name }}</td>
+            <td>{{ $teacher->teacherProfile->profileUser->email }}</td>
+            <td>{{ $teacher->teacherProfile->phone }}</td>
+            <td>{{ $teacher->status }}</td>
+            <td>
+                <form action="{{ Request::root() }}/teacher-create" method="POST">
+
+                    <a class="btn btn-info" href="{{ Request::root() }}/teacher-show/{{ $teacher->id }}">Show</a>
+                    <a class="btn btn-primary" href="{{ Request::root() }}/teacher-edit/{{ $teacher->id }}">Edit</a>
+
+                </form>
+
+                <form action="{{ url('/teacher-destroy/'.$teacher->id)}}" method="POST">
+                    {{method_field('DELETE')}}
+                    {{csrf_field()}}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+            </td>
+        </tr>
+        @endforeach -->
     </table>
   
     {!! $teachers->links() !!}

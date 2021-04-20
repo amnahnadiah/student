@@ -32,14 +32,14 @@ Route::delete('/profile-destroy/{id}', 'ProfileController@destroy');
 
 Route::get('/alamat', 'AlamatController@index')->name('alamat');
 Route::get('/alamat-show/{id}', 'AlamatController@show');
-Route::get('/alamat-show/{id}', 'AlamatController@show');
 Route::get('/alamat-create', 'AlamatController@create');
 Route::post('/alamat-create', 'AlamatController@store');
 Route::get('/alamat-edit/{id}', 'AlamatController@edit');
 Route::put('/alamat-update/{id}', 'AlamatController@update');
 Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
-Route::get('/teacher-index', 'TeacherController@index')->name('teacher');
+Route::get('/teacher', 'TeacherController@index')->name('teacher');
+Route::get('/teacher-index/fetch', 'TeacherController@fetch')->name('teacher.fetch');
 Route::get('/teacher-show', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create'); 
 Route::post('/teacher-create', 'TeacherController@store');
