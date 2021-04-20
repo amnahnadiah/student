@@ -44,7 +44,7 @@ class AlamatController extends Controller
         $zipcode = $request->input('zipcode');
         $country = $request->input('country');
         
-        $model = new Alamat;
+        $model = new alamat;
         $model->street = $street;
         $model->city = $city;
         $model->state = $state;

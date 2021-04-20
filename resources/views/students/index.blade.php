@@ -1,4 +1,4 @@
-@extends('students.menu')
+@extends('students.list')
  
 @section('content')
     <div class="row">
