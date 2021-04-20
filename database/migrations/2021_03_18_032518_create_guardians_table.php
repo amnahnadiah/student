@@ -13,9 +13,10 @@ class CreateGuardiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('parents', function (Blueprint $table) {
+        Schema::create('guardians', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('stud_id');
+            $table->string('p_name');
             $table->string('relationship');
             $table->integer('phone');
             $table->timestamps();
@@ -29,6 +30,6 @@ class CreateGuardiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('guardians');
     }
 }

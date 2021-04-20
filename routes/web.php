@@ -95,3 +95,6 @@ Route::post('/room-create', 'RoomController@store');
 Route::get('/room-edit/{id}', 'RoomController@edit');
 Route::put('/room-update/{id}', 'RoomController@update');
 Route::delete('/room-destroy/{id}', 'RoomController@destroy');
+
+Route::get('datatable', 'DataTableController@index');
+Route::get('fetch', 'DataTableController@fetch');

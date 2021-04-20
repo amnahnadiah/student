@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -76,7 +75,7 @@
                 </li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
                 <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
-                    <div class="search-input">
+                   <div class="search-input">
                         <div class="search-input-icon"><i data-feather="search"></i></div>
                         <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
                         <div class="search-input-close"><i data-feather="x"></i></div>
@@ -374,8 +373,14 @@
       <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Teacher">Student</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Room">Room</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
                     <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-create"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">Update</span></a>
+                        </li>
                         <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
@@ -383,8 +388,6 @@
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
                     </ul>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
                 </li>
             </ul>
         </div>
@@ -396,72 +399,25 @@
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
+            <div class="content-header row"></div>
             <div class="content-body">
-                <!-- users list start -->
-                <section class="app-user-list">
-                    <!-- users filter start -->
-                    <div class="card">
-                        <h5 class="card-header">Search Filter</h5>
-                        <div class="d-flex justify-content-between align-items-center mx-50 row pt-0 pb-2">
-                            <div class="col-md-4 user_role"></div>
-                            <div class="col-md-4 user_plan"></div>
-                            <div class="col-md-4 user_status"></div>
-                        </div>
-                    </div>
-                    <!-- users filter end -->
-                    <!-- list section start -->
                     <div class="card">
                         <div class="card-datatable table-responsive pt-0">
-                            <table class="user-list-table table">
+                            <table class="user-list-table table" id="students">
                                 <thead class="thead-light">
                                     <tr>
                                         <th></th>
                                         <th>User</th>
                                         <th>Email</th>
                                         <th>No Phone</th>
-                                        <th>Grade</th>
+                                        <th>Address</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                             </table>
                         </div>
-                        <!-- Modal to add new user starts-->
-                        <div class="modal modal-slide-in new-user-modal fade" id="modals-slide-in">
-                            <div class="modal-dialog">
-                                <form class="add-new-user modal-content pt-0">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-                                    <div class="modal-header mb-1">
-                                        <h5 class="modal-title" id="exampleModalLabel">New Student</h5>
-                                    </div>
-                                    <div class="modal-body flex-grow-1">
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-uname">Username</label>
-                                            <input type="text" id="basic-icon-default-uname" class="form-control dt-uname" placeholder="Example" aria-label="jdoe1" aria-describedby="basic-icon-default-uname2" name="user-name" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-email">Email</label>
-                                            <input type="text" id="basic-icon-default-email" class="form-control dt-email" placeholder="example@gmail.com" aria-label="john.doe@example.com" aria-describedby="basic-icon-default-email2" name="user-email" />
-                                            <small class="form-text text-muted"> You can use letters, numbers & periods </small>
-                                        </div>
-                                          <div class="form-group">
-                                             <label for="exampleInputPassword1">Password</label>
-                                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                            </div>                                        
-                                            <button type="submit" class="btn btn-primary mr-1 data-submit">Submit</button>
-                                        <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- Modal to add new user Ends-->
-                    </div>
-                    <!-- list section end -->
-                </section>
-                <!-- users list ends -->
-
+                       
             </div>
         </div>
     </div>
@@ -469,14 +425,6 @@
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
-    </footer>
-    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
-    <!-- END: Footer-->
-
 
     <!-- BEGIN: Vendor JS-->
     <script src="{{asset('templates/app-assets/vendors/js/vendors.min.js')}}"></script>
@@ -498,7 +446,7 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-list.js')}}"></script>
+    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-list1.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>
@@ -511,6 +459,22 @@
             }
         })
     </script>
+
+    <script>
+        $(function() {
+            $('#dataTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{{ url('students.index') }}',
+                columns: [
+                    { data: 'id', name: 'id' },
+                    { data: 'username', name: 'username' },
+                    { data: 'phone', name: 'phone' },
+                    { data: 'address', name: 'address' }
+                ]
+            });
+        });
+    </script>   
 </body>
 <!-- END: Body-->
 

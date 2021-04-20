@@ -1,4 +1,4 @@
-@extends('students.menu')
+@extends('students.create')
  
 @section('content')
  
