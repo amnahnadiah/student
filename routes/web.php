@@ -40,7 +40,7 @@ Route::delete('/alamat-destroy/{id}', 'AlamatController@destroy');
 
 Route::get('/teacher', 'TeacherController@index')->name('teacher');
 Route::get('/teacher-index/fetch', 'TeacherController@fetch')->name('teacher.fetch');
-Route::get('/teacher-show', 'TeacherController@show');
+Route::get('/teacher-show/{id}', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create'); 
 Route::post('/teacher-create', 'TeacherController@store');
 Route::get('/teacher-edit/{id}', 'TeacherController@edit');

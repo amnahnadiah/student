@@ -38,17 +38,17 @@
             <!-- User Card & Plan Starts -->
             <div class="row">
                 <!-- User Card starts-->
-                <div class="col-xl-9 col-lg-8 col-md-7">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="card user-card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
+                                <div class="col-xl-4 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
                                     <div class="user-avatar-section">
                                         <div class="d-flex justify-content-start">
                                             <div class="d-flex flex-column ml-1">
                                                 <div class="user-info mb-1">
-                                                    <h4 class="mb-0">{{ Auth::user()->id }}</h4>
-                                                    <span class="card-text">{{ Auth::user()->username }}</span>
+                                                    <h4 class="mb-0">{{ $teacher->teacherProfile->profileUser->username }}</h4>
+                                                    <span class="card-text">{{ $teacher->teacherProfile->profileUser->email  }}</span>
                                                 </div>
                                                 <div class="d-flex flex-wrap">
                                                     <a href="{{ Request::root() }}/teacher-edit/{{ $teacher->id }}" class="btn btn-primary">Edit</a>
@@ -58,21 +58,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
+                                <div class="col-xl-8 col-lg-12 mt-2 mt-xl-0">
                                     <div class="user-info-wrapper">
                                         <div class="d-flex flex-wrap">
                                             <div class="user-info-title">
                                                 <i data-feather="user" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">First Name</span>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Full Name</span>
                                             </div>
-                                            <p class="card-text mb-0">{{ $teacher->teacherProfile->f_name }}</p>
-                                        </div>
-                                        <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
-                                                <i data-feather="user" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Last Name</span>
-                                            </div>
-                                            <p class="card-text mb-0">{{ $teacher->teacherProfile->l_name }}</p>
+                                            <p class="card-text mb-0">{{ $teacher->teacherProfile->f_name }} {{ $teacher->teacherProfile->l_name }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
                                             <div class="user-info-title">

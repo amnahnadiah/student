@@ -10,4 +10,9 @@ class School extends Model
     {
     	return $this->hasMany('App\Students_school', 'school_id', 'id');
     }
+
+    public function schoolTeacher()
+    {
+    	return $this->hasMany('App\Teachers_school', 'school_id', 'id');
+    }
 }

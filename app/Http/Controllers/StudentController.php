@@ -12,7 +12,6 @@ use App\School;
 use App\Students_school;
 use Illuminate\Http\Request;
 
-
 class StudentController extends Controller
 {
     /**
@@ -101,10 +100,8 @@ class StudentController extends Controller
         $profile->ic = $ic;
         $profile->phone = $phone;
         $profile->dob = $dob;
-
         if($profile->save()){
             $profile_id = $profile->id;
-
             $student = new student;
             $student->grade = $grade;
             $student ->gender = $gender;

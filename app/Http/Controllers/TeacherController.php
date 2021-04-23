@@ -6,8 +6,12 @@ use Auth;
 use App\User;
 use App\Profile;
 use App\Teacher;
+use App\Alamat;
+use App\School;
+use App\Teachers_school;
 use Datatables;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -37,6 +41,8 @@ class TeacherController extends Controller
 
     public function fetch()
     {
+        // print_r(url('/'));
+        // die();
         if (request()->ajax())
         {
             $teachers = Teacher::latest()->get();
@@ -69,9 +75,10 @@ class TeacherController extends Controller
                 })
                 ->addColumn('action', function($row)
                 {
-                    $actionBtn = '<a href="{{ Request::root() }}/teacher-show" class="edit btn btn-info btn-sm">View</a> 
-                                    <a href="{{ Request::root() }}/teacher-edit/{{ $teacher->id }}" class="edit btn btn-success btn-sm">Edit</a> 
-                                    <a href="{{ Request::root() }}/teacher-destroy/{{ $teacher->id }}" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $url = url('/');
+                    $actionBtn = '<a href="'.$url.'/teacher-show/'.$row->id.'" class="edit btn btn-info btn-sm">View</a> 
+                                    <a href="'.$url.'/teacher-edit/'.$row->id.'" class="edit btn btn-success btn-sm">Edit</a> 
+                                    <a href="'.$url.'/teacher-destroy/'.$row->id.'" class="delete btn btn-danger btn-sm">Delete</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -111,6 +118,7 @@ class TeacherController extends Controller
         $username = $request->input('username');
         $email = $request->input('email');
         $password = $request->input('password');
+        $hashed = Hash::make($password);
         $phone = $request->input('phone');
         $ic = $request->input('ic');
         $dob = $request->input('dob');
@@ -121,7 +129,7 @@ class TeacherController extends Controller
         $user = new User;
         $user->username = $username;
         $user->email = $email;
-        $user->password = $password;
+        $user->password = $hashed;
         $user->is_teacher = $is_teacher;
         if($user->save())
         {
@@ -167,8 +175,10 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        $teachers = Teacher::with('profile')->findOrFail($id);
-        // $teachers = Teacher::find($id);
+        // $userId = $id ?: auth()->user()->id;
+    
+        // $teacher = Teacher::with('teacherProfile')->find($userId);
+        $teacher = Teacher::find($id);
         
         // echo '<pre>';
         // print_r($model);
@@ -188,11 +198,11 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        $model = Teacher::find($id);
+        $teacher = Teacher::find($id);
         
         return view('teachers.update',[
             'id' => $id,
-            'teacher' => $model,
+            'teacher' => $teacher,
         ]);
     }
 
@@ -205,21 +215,82 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $position = $request->input('position');
-        $acad_level = $request->input('acad_level');
-        $deleteId = $request->input('deleteId');
+        $f_name = $request->input('f_name');
+        $l_name = $request->input('l_name');
+        $username = $request->input('username');
+        $email = $request->input('email');
+        // $password = $request->input('password');
+        // $hashed = Hash::make($password);
+        $ic = $request->input('ic');
+        $dob = $request->input('dob');
+        $phone = $request->input('phone');
+        $gender = $request->input('gender');
         $status = $request->input('status');
         
-        $model = Teacher::find($id);
-        $model->position = $position;
-        $model->acad_level = $acad_level;
-        $model->deleteId = $deleteId;
-        $model->status = $status;
-        $model->save();
+        $street = $request->input('street');
+        $city = $request->input('city');
+        $state = $request->input('state');
+        $zipcode = $request->input('zipcode');
+        $country = $request->input('country');
 
+        $name = $request->input('name');
+        $type = $request->input('type');
+        $year = $request->input('year');
+        $acad_level = $request->input('acad_level');
+
+        $teacher = Teacher::find($id);
+        $teacher->gender = $gender;
+        $teacher->acad_level = $acad_level;
+        $teacher->status = $status;
+        if($teacher->save())
+        {
+            $prof_id = $teacher->teacherProfile->id;
+            // $teacher->teacherProfile->sync([$prof_id]);
+            // $teacher->prof_id = $profile->id;
+            // $profile = Teacher::where('prof_id', $profile->id)->find(1);
+            $profile = Profile::find($prof_id);
+            $profile->f_name = $f_name;
+            $profile->l_name = $l_name;
+            $profile->ic = $ic;
+            $profile->dob = $dob;
+            $profile->phone = $phone;
+            if($profile->save())
+            {
+                $user_id = $profile->profileUser->id;
+                // $teacher->teacherProfile->profileUser->sync([$user_id]);
+                // $profile->user_id = $user->id;
+                $user = User::find($user_id);
+                $user->username = $username;
+                $user->email = $email;
+                // $user->password = $hashed;
+                if($user->save())
+                {
+                    $alamat = new Alamat;
+                    $alamat->prof_id = $profile->id;
+                    $alamat->street = $street;
+                    $alamat->city = $city;
+                    $alamat->state = $state;
+                    $alamat->zipcode = $zipcode;
+                    $alamat->country = $country;
+                    if($alamat->save())
+                    {
+                        $school = new School;
+                        $school->name = $name;
+                        $school->type = $type;
+                        $school->year = $year;
+                        if($school->save())
+                        {
+                            $teachersSchool = new Teachers_school;
+                            $teachersSchool->teacher_id = $teacher->id;
+                            $teachersSchool->school_id = $school->id;
+                            $teachersSchool->save();
+                        }
+                    }
+                }
+            }
+        }
         return redirect()->route('teacher',[
                                     'id' => $id,
-                                    'teacher' => $model,
                                 ])
                         ->with('success','Teacher updated successfully');
     }
