@@ -15,6 +15,13 @@ class Profile extends Model
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
 
+    }
+
+    public function users() 
+    {
+        return $this->belongsTo('App\User','user_id', 'id');
+    }
+
     public function students()
     {
         return $this->hasMany('App\Student', 'prof_id','id');

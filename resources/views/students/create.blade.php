@@ -4,17 +4,6 @@
 <!-- BEGIN: Head-->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>Form Layouts - Vuexy - Bootstrap HTML admin template</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
-
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/vendors/css/vendors.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/vendors/css/forms/wizard/bs-stepper.min.css')}}">
@@ -384,8 +373,8 @@
                         </li>
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
-                        </li>
+                        <!-- <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
+                        </li> -->
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
                     </ul>
@@ -427,13 +416,13 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="ic">IC</label>
-                                                    <input type="number" id="ic" class="form-control" placeholder="IC" name="ic" />
+                                                    <input type="int" id="ic" class="form-control" placeholder="IC" name="ic" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="phone">Telephone No</label>
-                                                    <input type="number" id="phone" class="form-control" name="phone" placeholder="Telephone No" />
+                                                    <input type="int" id="phone" class="form-control" name="phone" placeholder="Telephone No" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
@@ -475,7 +464,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="zipcode">ZipCode</label>
-                                                    <input type="number" id="zipcode" class="form-control" name="zipcode" placeholder="ZipCode" />
+                                                    <input type="int" id="zipcode" class="form-control" name="zipcode" placeholder="ZipCode" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
@@ -501,8 +490,8 @@
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <label for="phone">Phone No</label>
-                                                    <input type="number" id="phone" class="form-control" name="phone" placeholder="Phone No" />
+                                                    <label for="p_phone">Phone No</label>
+                                                    <input type="int" id="p_phone" class="form-control" name="p_phone" placeholder="Phone No" />
                                                 </div>
                                             </div>
                                             <div class="card-header">
@@ -510,26 +499,26 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="name">School Name</label>
-                                                    <input type="text" id="name" class="form-control" name="name" placeholder="School Name" />
+                                                    <label for="s_name">School Name</label>
+                                                    <input type="text" id="s_name" class="form-control" name="s_name" placeholder="School Name" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="type">Type of School</label>
                                                     <input type="text" id="type" class="form-control" name="type" placeholder="Type of School (SMK/SK)" />
-                                            </div>
+                                                </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <label for="phone">School Phone No</label>
-                                                    <input type="number" id="phone" class="form-control" name="phone" placeholder="School Phone No" />
+                                                    <label for="s_phone">School Phone No</label>
+                                                    <input type="int" id="s_phone" class="form-control" name="s_phone" placeholder="School Phone No" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="year">Year</label>
-                                                    <input type="number" id="year" class="form-control" name="year" placeholder="Year" />
+                                                    <input type="integer" id="year" class="form-control" name="year" placeholder="Year" />
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -548,225 +537,6 @@
         </div>
     </div>
     <!-- END: Content-->
-
-<!--  <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper"> -->
-                <!-- Horizontal Wizard -->
-               <!--  <section class="horizontal-wizard">
-                    <div class="bs-stepper horizontal-wizard-example">
-                        <div class="bs-stepper-header">
-                            <div class="step" data-target="#basic-info">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">1</span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Basic Information</span>
-                                        <span class="bs-stepper-subtitle">Setup Basic Information</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="line">
-                                <i data-feather="chevron-right" class="font-medium-2"></i>
-                            </div>
-                            <div class="step" data-target="#address-info">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">2</span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Address</span>
-                                        <span class="bs-stepper-subtitle">Add Address</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="line">
-                                <i data-feather="chevron-right" class="font-medium-2"></i>
-                            </div>
-                            <div class="step" data-target="#parents-info">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">3</span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Parents Information</span>
-                                        <span class="bs-stepper-subtitle">Add Parents Information</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="line">
-                                <i data-feather="chevron-right" class="font-medium-2"></i>
-                            </div>
-                            <div class="step" data-target="#school-info">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">4</span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">School Information</span>
-                                        <span class="bs-stepper-subtitle">Add School Information</span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="bs-stepper-content">
-                            <div id="basic-info" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Basic Information</h5>
-                                    <small class="text-muted">Please Enter Your Basic Information.</small>
-                                </div>
-                                <form class="form" action ="{{ url('/student-create') }}" method="POST">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="f_name">First Name</label>
-                                            <input type="text" name="f_name" id="f_name" class="form-control" placeholder="Enter your first name" />
-                                        </div>
-                                            <div class="form-group col-md-6">
-                                            <label class="form-label" for="l_name">Last Name</label>
-                                            <input type="text" name="l_name" id="l_name" class="form-control" placeholder="Enter your last name" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="ic">IC</label>
-                                            <input type="number" name="ic" id="ic" class="form-control" placeholder="Enter your identity card number" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="phone">Telephone No</label>
-                                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter your telephone no" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="dob">Date of Birth</label>
-                                            <input type="date" name="dob" id="dob" class="form-control" placeholder="Enter your birth date" />
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="gender">Gender</label>
-                                                <select class="form-control" id="gender" name="gender">
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary btn-prev" disabled>
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0" name="next" value="next"></i>
-                                    </button>
-                                </div>
-                            </div>
-                                <div id="address-info" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Address Information</h5>
-                                    <small>Enter Your Address Information.</small>
-                                </div>
-                               <form>
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="street">Street</label>
-                                            <input type="text" name="street" id="street" class="form-control" placeholder="Street" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="city">City</label>
-                                            <input type="text" name="city" id="city" class="form-control" placeholder="City" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="state">State</label>
-                                            <input type="text" name="state" id="state" class="form-control" placeholder="State" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="zipcode">ZipCode</label>
-                                            <input type="number" name="zipcode" id="zipcode" class="form-control" placeholder="ZipCode" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="country">Country</label>
-                                            <input type="text" name="country" id="country" class="form-control" placeholder="Country" />
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="parents-info" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Parent Information</h5>
-                                    <small>Enter Your Parent Information.</small>
-                                </div>
-                                 <form>
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="p_name">Parent Name</label>
-                                            <input type="text" id="p_name" name="p_name" class="form-control" placeholder="Enter your father/mother name" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="relationship">Relationship</label>
-                                            <input type="text" name="relationship" id="relationship" class="form-control" placeholder="Relationship" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="phone">Phone No</label>
-                                            <input type="text" id="phone" class="form-control" placeholder="Parent Phone No" />
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
-                                    </button>
-                                </div> -->
-                            <!-- </div>
-                            <div id="school-info" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">School Information</h5>
-                                    <small>Enter Your School Information.</small>
-                                </div>
-                                <form class="form" action ="{{ url('/student-create') }}" method="POST">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="name">School Name</label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Name of your school" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="type">Type of School</label>
-                                            <input type="text" name="type" id="type" class="form-control" placeholder="SMK/SK" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="phone">School Phone No</label>
-                                            <input type="number" name="phone" id="phone" class="form-control" placeholder="School Phone No" />
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label class="form-label" for="year">Year</label>
-                                            <input type="text" name="year" id="year" class="form-control" placeholder="Year" />
-                                        </div> -->
-                  <!--                   </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button type = "submit" class="btn btn-success btn-submit">Submit</button>
-                                </div> 
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                 </section>
-             </div>
-         </div> -->
-
-    
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>

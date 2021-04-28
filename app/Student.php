@@ -18,6 +18,15 @@ class Student extends Model
 
     public function studentSchool()
     {
-    	return $this->hasMany('App\Students_school', 'stud_id', 'id'); 
+    	return $this->belongsTo('App\Students_school', 'stud_id', 'id'); 
+    }
+
+    public function studentSchoolMany()
+    {
+        return $this->hasMany('App\Students_school', 'stud_id', 'id'); 
+    }
+    public function studentSchoolManyOne()
+    {
+        return $this->hasOne('App\Students_school', 'stud_id', 'id'); 
     }
 }   

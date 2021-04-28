@@ -8,6 +8,7 @@ class School extends Model
 {
      public function studentSchool()
     {
-    	return $this->hasMany('App\Students_school', 'school_id', 'id');
+    	return $this->belongsTo('App\Students_school', 'school_id', 'id');
     }
+
 }
