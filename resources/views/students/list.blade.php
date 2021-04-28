@@ -257,85 +257,7 @@
             </ul>
         </div>
     </nav>
-    <ul class="main-search-list-defaultlist d-none">
-        <li class="d-flex align-items-center"><a href="javascript:void(0);">
-                <h6 class="section-label mt-75 mb-0">Files</h6>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/xls.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/jpg.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;11kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/pdf.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;150kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/doc.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;256kb</small>
-            </a></li>
-        <li class="d-flex align-items-center"><a href="javascript:void(0);">
-                <h6 class="section-label mt-75 mb-0">Members</h6>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div>
-            </a></li>
-    </ul>
-    <ul class="main-search-list-defaultlist-other-list d-none">
-        <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
-                <div class="d-flex justify-content-start"><span class="mr-75" data-feather="alert-circle"></span><span>No results found.</span></div>
-            </a></li>
-    </ul>
     <!-- END: Header-->
-
 
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
@@ -383,8 +305,6 @@
                         </li>
                         <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
-                        </li>
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
                     </ul>
@@ -403,23 +323,21 @@
             <div class="content-body">
                     <div class="card">
                         <div class="card-datatable table-responsive pt-0">
-                            <table class="user-list-table table" id="students">
+                            <table class="user-list-table table" id="dataTable">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th></th>
+                                        <th>ID</th>
                                         <th>User</th>
                                         <th>Email</th>
                                         <th>No Phone</th>
                                         <th>Address</th>
-                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                             </table>
                         </div>
-                       
+                    </div>
             </div>
-        </div>
     </div>
     <!-- END: Content-->
 
@@ -431,13 +349,13 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
+    <!-- <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
     <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('templates/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script> -->
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -445,32 +363,29 @@
     <script src="{{asset('templates/app-assets/js/core/app.js')}}"></script>
     <!-- END: Theme JS-->
 
-    <!-- BEGIN: Page JS-->
-    <script src="{{asset('templates/app-assets/js/scripts/pages/app-user-list1.js')}}"></script>
-    <!-- END: Page JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
-    <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
-            }
-        })
-    </script>
+    <script type="text/javascript">
+        $(document).ready(function()
+         {
+            $('#dataTable').dataTable(
+            {
+                processing: false,
+                serverSide: false,
+                ajax: "{{ route('student.fetch') }}",
+                columns: 
+                [
+                    { data: 'id'  },
+                    { data: 'f_name' },
+                    { data: 'email' },
+                    { data: 'phone' },
+                    { data: 'address' },
 
-    <script>
-        $(function() {
-            $('#dataTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: '{{ url('students.index') }}',
-                columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'username', name: 'username' },
-                    { data: 'phone', name: 'phone' },
-                    { data: 'address', name: 'address' }
+                    {data: 'action'},
                 ]
             });
         });
@@ -479,3 +394,4 @@
 <!-- END: Body-->
 
 </html>
+

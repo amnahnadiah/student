@@ -18,7 +18,7 @@ class CreateGuardiansTable extends Migration
             $table->integer('stud_id');
             $table->string('p_name');
             $table->string('relationship');
-            $table->integer('phone');
+            $table->integer('p_phone');
             $table->timestamps();
         });
     }

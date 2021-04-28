@@ -50,6 +50,7 @@ Route::put('/teacher-update/{id}', 'TeacherController@update');
 Route::get('/teacher-destroy/{id}', 'TeacherController@destroy');
 
 Route::get('/student-index', 'StudentController@index')->name('student');
+Route::get('/student-index/fetch', 'StudentController@fetch')->name('student.fetch');
 Route::get('/student-show/{id}', 'StudentController@show');
 Route::get('/student-create', 'StudentController@create');
 Route::post('/student-create', 'StudentController@store');
@@ -98,5 +99,4 @@ Route::get('/room-edit/{id}', 'RoomController@edit');
 Route::put('/room-update/{id}', 'RoomController@update');
 Route::delete('/room-destroy/{id}', 'RoomController@destroy');
 
-Route::get('datatable', 'DataTableController@index');
-Route::get('fetch', 'DataTableController@fetch');
+
