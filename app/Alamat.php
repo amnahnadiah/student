@@ -10,5 +10,10 @@ class Alamat extends Model
     {
     	return $this->belongsTo('App\Profile', 'prof_id', 'id');
     }
+
+    public function alamatProfile()
+    {
+    	return $this->belongsTo('App\Profile', 'prof_id', 'id');
+    }
 }
 

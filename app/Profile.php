@@ -14,7 +14,9 @@ class Profile extends Model
     public function profileUser() 
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
+    }
 
+<<<<<<< HEAD
     }
 
     public function users() 
@@ -22,6 +24,13 @@ class Profile extends Model
         return $this->belongsTo('App\User','user_id', 'id');
     }
 
+=======
+    public function profileAlamat()
+    {
+    	return $this->hasOne('App\Alamat', 'prof_id', 'id');
+    }
+    
+>>>>>>> origin/main
     public function students()
     {
         return $this->hasMany('App\Student', 'prof_id','id');

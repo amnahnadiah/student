@@ -13,7 +13,6 @@ use App\Students_school;
 use Datatables;
 use Illuminate\Http\Request;
 
-
 class StudentController extends Controller
 {
     /**

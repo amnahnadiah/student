@@ -10,4 +10,9 @@ class Teacher extends Model
     {
         return $this->belongsTo('App\Profile','prof_id', 'id');
     }
+
+    public function teacherSchool() 
+    {
+        return $this->hasMany('App\Students_school', 'teacher_id', 'id'); 
+    }
 }
