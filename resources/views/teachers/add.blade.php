@@ -65,9 +65,9 @@
             </li>     
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
             </li>
-            <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Teacher">Teacher</span></a>
+            <li class=" active nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Teacher">Teacher</span></a>
                 <ul class="menu-content">
-                    <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher-create/"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">Create</span></a>
+                    <li><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher-create/"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">Create</span></a>
                     </li>
                     <li><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                     </li>
@@ -100,83 +100,78 @@
                                     <h4 class="card-title">Add new teacher</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" action="{{ url('/teacher-create') }}" method="POST">
+                                    <form class="form" action="{{ url('teacher-add/'.$teacher->id) }}" method="POST">
                                     @csrf
                                         <div class="row">
-                                            <div class="col-md-6 col-12">
+                                        <div class="col-12">
+                                            <h4 class="card-title">Address Information</h4>
+                                        </div>
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
                                                 <div class="form-group">
-                                                    <label for="f_name">First Name</label>
-                                                    <input type="text" id="f_name" class="form-control" placeholder="First Name" name="f_name" />
+                                                    <label for="basicInput">Street</label>
+                                                    <input type="text" class="form-control" id="street" name="street" placeholder="Street"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
                                                 <div class="form-group">
-                                                    <label for="l_name">Last Name</label>
-                                                    <input type="text" id="l_name" class="form-control" placeholder="Last Name" name="l_name" />
+                                                    <label for="basicInput">City</label>
+                                                    <input type="text" class="form-control" id="city" name="city" placeholder="City"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
                                                 <div class="form-group">
-                                                    <label for="username">Username</label>
-                                                    <input type="text" id="username" class="form-control" placeholder="Username" name="username" />
+                                                    <label for="basicInput">State</label>
+                                                    <input type="text" class="form-control" id="state" name="state" placeholder="State"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
                                                 <div class="form-group">
-                                                    <label for="email">Email</label>
-                                                    <input type="email" id="email" class="form-control" placeholder="Email" name="email"  />
+                                                    <label for="basicInput">Zipcode</label>
+                                                    <input type="int" class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
                                                 <div class="form-group">
-                                                    <label for="password">Password</label>
-                                                    <input type="password" id="password" class="form-control"  placeholder="Password" name="password" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="phone">Phone Number</label>
-                                                    <input type="int" id="phone" class="form-control" name="phone" placeholder="Phone Number" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="ic">NRIC</label>
-                                                    <input type="int" id="ic" class="form-control" name="ic" placeholder="NRIC" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="dob">Date of Birth</label>
-                                                    <input type="date" id="dob" class="form-control" name="dob" placeholder="Date of Birth" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="gender">Gender</label>
-                                                    <select class="form-control" id="gender" name="gender">
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female">Female</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="status">Status</label>
-                                                    <select class="form-control" id="status" name="status">
-                                                        <option value="Active">Active</option>
-                                                        <option value="Inactive">Inactive</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="is_teacher" name="is_teacher" value=1>
-                                                    <label class="form-check-label" for="is_teacher">Is this person a teacher?</label>
+                                                    <label for="basicInput">Country</label>
+                                                    <input type="text" class="form-control" id="country" name="country" placeholder="Country"/>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                                <h4 class="card-title">School Information</h4>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                <div class="form-group">
+                                                    <label for="basicInput">Schoool Name</label>
+                                                    <input type="text" class="form-control" id="s_name" name="s_name" placeholder="School Name"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                <div class="form-group">
+                                                    <label for="basicInput">Type</label>
+                                                    <input type="text" class="form-control" id="type" name="type" placeholder="Type"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                <div class="form-group">
+                                                    <label for="basicInput">Year</label>
+                                                    <input type="int" class="form-control" id="year" name="year" placeholder="Year"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                <div class="form-group">
+                                                    <label for="basicInput">Academic Level</label>
+                                                    <select class="form-control" id="acad_level" name="acad_level">
+                                                        <option value="SPM">SPM</option>
+                                                        <option value="STPM">STPM</option>
+                                                        <option value="Diploma">Diploma</option>
+                                                        <option value="Degree">Degree</option>
+                                                        <option value="Master">Master</option>
+                                                        <option value="PHD">PHD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary mr-1">Add</button>
                                                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
                                             </div>
                                         </div>

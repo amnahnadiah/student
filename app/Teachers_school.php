@@ -11,8 +11,13 @@ class Teachers_school extends Model
     	return $this->belongsTo('App\Teacher', 'teacher_id','id');
     }
 
-     public function schools()
+    public function schools()
     {
     	return $this->belongsTo('App\School', 'school_id', 'id'); 
+    }
+
+    public function schoolsOne()
+    {
+    	return $this->hasOne('App\School', 'id', 'school_id'); 
     }
 }

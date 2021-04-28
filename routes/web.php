@@ -43,9 +43,11 @@ Route::get('/teacher-index/fetch', 'TeacherController@fetch')->name('teacher.fet
 Route::get('/teacher-show/{id}', 'TeacherController@show');
 Route::get('/teacher-create', 'TeacherController@create'); 
 Route::post('/teacher-create', 'TeacherController@store');
+Route::get('/teacher-newinfo/{id}', 'TeacherController@new'); 
+Route::post('/teacher-add/{id}', 'TeacherController@add');
 Route::get('/teacher-edit/{id}', 'TeacherController@edit');
 Route::put('/teacher-update/{id}', 'TeacherController@update');
-Route::delete('/teacher-destroy/{id}', 'TeacherController@destroy');
+Route::get('/teacher-destroy/{id}', 'TeacherController@destroy');
 
 Route::get('/student-index', 'StudentController@index')->name('student');
 Route::get('/student-show/{id}', 'StudentController@show');
