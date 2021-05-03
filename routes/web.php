@@ -76,6 +76,7 @@ Route::put('/school-update/{id}', 'SchoolController@update');
 Route::delete('/school-destroy/{id}', 'SchoolController@destroy');
 
 Route::get('/subject', 'SubjectController@index')->name('subject');
+Route::get('/subject-index/fetch', 'SubjectController@fetch')->name('subject.fetch');
 Route::get('/subject-show/{id}', 'SubjectController@show');
 Route::get('/subject-create', 'SubjectController@create');
 Route::post('/subject-create', 'SubjectController@store');

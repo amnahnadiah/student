@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('home')
  
 @section('content')
  

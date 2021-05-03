@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subject;
+use Datatables;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -14,12 +15,41 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::latest()->paginate(5);
-  
-        return view('subjects.index',compact('subjects'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('subjects.list');
 
     }
+
+    public function fetch()
+    {
+        if (request()->ajax())
+        {
+            $subjects = Subject::latest()->get();
+           
+            return Datatables::of($subjects)
+                ->addIndexColumn()
+                ->addColumn('id', function($row)
+                {
+                    return $row->id;
+                })
+                ->addColumn('name', function($row)
+                {
+                    return $row->name;
+                })
+                ->addColumn('description', function($row)
+                {
+                    return $row->description;
+                })
+                ->addColumn('action', function($row)
+                {
+                    $url = url('/');
+                    $actionBtn = '<a href="'.$url.'/subject-show/'.$row->id.'" class="edit btn btn-info btn-sm">View</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
