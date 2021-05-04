@@ -9,7 +9,9 @@ use App\Guardian;
 use App\Student;
 use App\Alamat;
 use App\School;
+use App\Edulevel;
 use App\Students_school;
+use App\Profiles_edulevel;
 use Datatables;
 use Illuminate\Http\Request;
 
@@ -61,6 +63,11 @@ class StudentController extends Controller
                     return $row->profiles->alamats->street;
                     return $row->profiles->alamats->city;
                 })
+                ->addColumn('acad_level', function($row)
+                {
+                    return $row->profiles->profileEdulevel->edulevelsOne->level;                                  
+                })
+               
                 ->addColumn('action', function($row)
                 {
                     $url = url('/');
@@ -120,9 +127,12 @@ class StudentController extends Controller
 
         $s_name = $request->input('s_name');
         $type = $request->input('type');
+        $acad_level = $request->input('acad_level');
         $s_phone = $request->input('s_phone');
         $year = $request->input('year');
-        
+
+        $edu_id = $request->input('edu_id');
+
         $user = User::where('id',$id)->first();
         if($user->save())
         {
@@ -144,65 +154,45 @@ class StudentController extends Controller
                     $school = new school;
                     $school->s_name = $s_name;
                     $school->type = $type;
+                    $school->acad_level = $acad_level;
                     $school->s_phone = $s_phone;
                     $school->year = $year;
                     if($school->save())
                     {
                         $studentSchool = new Students_school;
-                        $studentSchool->stud_id = $student->id;
+                        $studentSchool->stud_id = $student->id; 
                         $studentSchool->school_id = $school->id;
                         if($studentSchool->save())
                         {
-                            $guardian = new guardian;
-                            $guardian->p_name = $p_name;
-                            $guardian->relationship = $relationship;
-                            $guardian->p_phone = $p_phone;
-                            $guardian->stud_id = $student->id;
-                            if($guardian->save())
-                            {
-
-                                $alamat = new alamat;
-                                $alamat->prof_id = $profile->id;
-                                $alamat->street = $street;
-                                $alamat->city = $city;
-                                $alamat->state = $state;
-                                $alamat->zipcode = $zipcode;
-                                $alamat->country = $country;
-                                $alamat->save();
-                            }
-                        }
+                                $profEdulevel = new Profiles_edulevel;
+                                $profEdulevel->prof_id = $profile->id;
+                                $profEdulevel->edu_id = $edu_id;
+                                if($profEdulevel->save())
+                                {
+                                    $guardian = new guardian;
+                                    $guardian->p_name = $p_name;
+                                    $guardian->relationship = $relationship;
+                                    $guardian->p_phone = $p_phone;
+                                    $guardian->stud_id = $student->id;
+                                    if($guardian->save())
+                                    {
+                                        $alamat = new alamat;
+                                        $alamat->prof_id = $profile->id;
+                                        $alamat->street = $street;
+                                        $alamat->city = $city;
+                                        $alamat->state = $state;
+                                        $alamat->zipcode = $zipcode;
+                                        $alamat->country = $country;
+                                        $alamat->save();
+                                    }
+                                }
+                       }
 
                     }
                 }
             }        
         }
         // Auth::user()->users()->save($profile);
-
-        // $student = new student;
-        // $student->grade = $grade;
-        // $student ->gender = $gender;
-        // $profile->save();              
-
-        // $alamat = new alamat;
-        // $alamat->street = $street;
-        // $alamat->city = $city;
-        // $alamat->state = $state;
-        // $alamat->zipcode = $zipcode;
-        // $alamat->country = $country;
-        // $profile->alamats()->save($alamat);
-
-        // $guardian = new guardian;
-        // $guardian->p_name = $p_name;
-        // $guardian->relationship = $relationship;
-        // $guardian->phone = $phone;
-        // $student->guardians()->save($guardian);
-
-        // $school = new school;
-        // $school->name = $name;
-        // $school->type = $type;
-        // $school->phone = $phone;
-        // $school->year = $year;
-        // $student->save();
 
         return redirect()->route('student')
                         ->with('success','Student created successfully.');
@@ -275,8 +265,11 @@ class StudentController extends Controller
 
         $s_name = $request->input('s_name');
         $type = $request->input('type');
+        $acad_level = $request->input('acad_level');
         $s_phone = $request->input('s_phone');
         $year = $request->input('year');
+
+        $edu_id = $request->input('edu_id');
         
         // $user = User::where('id',$id)->first();
         // if($user->save())
@@ -293,10 +286,8 @@ class StudentController extends Controller
                 $profile->l_name = $l_name;
                 $profile->ic = $ic;
                 $profile->phone = $phone;
-                $profile->dob = $dob;
-                // $profile->user_id = $user->id;          
+                $profile->dob = $dob;         
                 if($profile->save())
-
                 {
                     $user_id = $profile->users->id;
                     $user = User::find($user_id);
@@ -304,59 +295,49 @@ class StudentController extends Controller
                     $user->email = $email;
                     if($user->save());
                     {
-
-                     $prof_id = $profile->alamats->id;
-                     $alamat = Alamat::find($prof_id);
-                     // $alamat->prof_id = $profile->id;
-                     $alamat->street = $street;
-                     $alamat->city = $city;
-                     $alamat->state = $state;
-                     $alamat->zipcode = $zipcode;
-                     $alamat->country = $country;
-                     if($alamat->save())
-                   
-                    {
-                        $stud_id = $student->guardians->id;
-                        $guardian = Guardian::find($stud_id);
-                        $guardian->p_name = $p_name;
-                        $guardian->relationship = $relationship;
-                        $guardian->p_phone = $p_phone;
-                        $guardian->stud_id = $student->id;
-                        if($guardian->save());
-                      
+                         $prof_id = $profile->alamats->id;
+                         $alamat = Alamat::find($prof_id);
+                         $alamat->street = $street;
+                         $alamat->city = $city;
+                         $alamat->state = $state;
+                         $alamat->zipcode = $zipcode;
+                         $alamat->country = $country;
+                         if($alamat->save())
                         {
-                            $stud_id = $student->studentSchoolManyOne->id;
-                            $studentSchool = Students_school::find($stud_id);
-                            // $studentSchool->stud_id = $student->id;
-                            // $studentSchool->school_id = $school->id;
-                            if($studentSchool->save());
-
+                            $prof_id = $profile->profileEdulevel->id;
+                            $profEdulevel = Profiles_edulevel::find($prof_id);
+                            $profEdulevel->edu_id = $edu_id;
+                            if($profEdulevel->save());
                             {
-                                $school_id = $studentSchool->schoolsOne->id;
-                                $school = School::find($school_id);
-                                $school->s_name = $s_name;
-                                $school->type = $type;
-                                $school->s_phone = $s_phone;
-                                $school->year = $year;
-                                $school->save();
-                            }  
+                                $stud_id = $student->guardians->id;
+                                $guardian = Guardian::find($stud_id);
+                                $guardian->p_name = $p_name;
+                                $guardian->relationship = $relationship;
+                                $guardian->p_phone = $p_phone;
+                                $guardian->stud_id = $student->id;
+                                if($guardian->save());
+                                {
+                                    $stud_id = $student->studentSchoolOne->id;
+                                    $studentSchool = Students_school::find($stud_id);
+                                    if($studentSchool->save());
+                                    {
+                                        $school_id = $studentSchool->schoolsOne->id;
+                                        $school = School::find($school_id);
+                                        $school->s_name = $s_name;
+                                        $school->type = $type;
+                                        $school->acad_level = $acad_level;
+                                        $school->s_phone = $s_phone;
+                                        $school->year = $year;
+                                        $school->save();
+                                    }  
+                                }
+                            
+                            }
                         }
                     }
                 }
-             }
-         }        
-       // }
-
-        // $grade = $request->input('grade');
-        // $deleteId = $request->input('deleteId');
-        // $status = $request->input('status');
-        
-        // $student = Student::find($id);
-        // $student->grade = $grade;
-        // $student->deleteId = $deleteId;
-        // $student->status = $status;
-        // $student->save();
-
+            }        
+ 
         return redirect()->route('student',[
                                     'id' => $id,
                                     // 'student' => $model,
@@ -378,10 +359,9 @@ class StudentController extends Controller
         $guardian = Guardian::find($stud_id);
         if($guardian->delete());
         {     
-            $stud_id = $student->studentSchoolManyOne->id;
+            $stud_id = $student->studentSchoolOne->id;
             $studentSchool = Students_school::find($stud_id);
-            if($studentSchool->delete());
-                  
+            if($studentSchool->delete());     
             {
                 $stud_id = $studentSchool->studentsOne->id;
                 $student = Student::find($stud_id);
@@ -397,21 +377,26 @@ class StudentController extends Controller
                         $alamat = Alamat::find($prof_id);
                         if($alamat->delete());
                         {  
-                            $prof_id = $student->profiles->id;
-                            $profile = Profile::find($prof_id);        
-                            if($profile->delete());  
+                            $prof_id = $profile->profileEdulevel->id;
+                            $profEdulevel = Profiles_edulevel::find($prof_id);
+                            if($profEdulevel->delete());
                             {
-                                $user_id = $profile->users->id;
-                                $user = User::find($user_id);
-                                $user->delete();
-                            }  
+                                        $prof_id = $profEdulevel->profilesOne->id;
+                                        $profile = Profile::find($prof_id);        
+                                        $profile->delete();  
+                                        // {
+                                        //     $user_id = $profile->users->id;
+                                        //     $user = User::find($user_id);
+                                        //     $user->delete();
+                                        // } 
+                                    
+                                 
+                            }   
                         }
                     }
                 }
             }
         }
-         
-        
         return redirect()->route('student')
                         ->with('success','Student deleted successfully');
     }    

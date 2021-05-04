@@ -25,7 +25,7 @@ class Student extends Model
     {
         return $this->hasMany('App\Students_school', 'stud_id', 'id'); 
     }
-    public function studentSchoolManyOne()
+    public function studentSchoolOne()
     {
         return $this->hasOne('App\Students_school', 'stud_id', 'id'); 
     }

@@ -25,8 +25,9 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Time</th>
-            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Day</th>
             <th>Location</th>
 
             <th width="280px">Action</th>
@@ -35,8 +36,9 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $room->name }}</td>
-            <td>{{ $room->time }}</td>
-            <td>{{ $room->date }}</td>
+            <td>{{ $room->start_time }}</td>
+            <td>{{ $room->end_time }}</td>
+            <td>{{ $room->day }}</td>
             <td>{{ $room->location }}</td>
 
             <td>

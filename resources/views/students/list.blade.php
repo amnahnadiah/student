@@ -299,14 +299,16 @@
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Room">Room</span></a>
                 </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Edulevel">Education level</span></a>   
+                </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-create"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">Update</span></a>
                         </li>
                         <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
-                        </li>
+                     <!--    <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
@@ -331,6 +333,7 @@
                                         <th>Email</th>
                                         <th>No Phone</th>
                                         <th>Address</th>
+                                        <th>Academic Level</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -384,8 +387,8 @@
                     { data: 'email' },
                     { data: 'phone' },
                     { data: 'address' },
-
-                    {data: 'action'},
+                    { data: 'acad_level'},
+                    { data: 'action'},
                 ]
             });
         });

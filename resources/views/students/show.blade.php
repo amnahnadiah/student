@@ -383,10 +383,6 @@
                         </li>
                         <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                      <!--   <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
-                        </li> -->
-                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
-                        </li>
                     </ul>
                 </li>
             </ul>
@@ -452,7 +448,7 @@
                                                         <i data-feather="phone" class="mr-1"></i>
                                                         <span class="card-text user-info-title font-weight-bold mb-0">Telephone No</span>
                                                     </div>
-                                                    <p class="card-text mb-0">{{ $student->profiles->phone }}</p>
+                                                    <p class="card-text mb-0">+60{{ $student->profiles->phone }}</p>
                                                 </div>
                                                 <div class="d-flex flex-wrap my-50">
                                                     <div class="user-info-title">
@@ -478,10 +474,7 @@
                                                     <div class="d-flex flex-wrap">
                                                     <div class="user-info-title"></div>
                                                     <p class="card-text mb-0">{{ $student->profiles->alamats->zipcode }}</p>
-                                                </div>
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="user-info-title"></div>
-                                                    <p class="card-text mb-0">{{ $student->profiles->alamats->city }}</p>
+                                                    <p class="card-text mb-0">  {{ $student->profiles->alamats->city }}</p>
                                                 </div>
                                                 <div class="d-flex flex-wrap">
                                                     <div class="user-info-title"></div>
@@ -503,7 +496,7 @@
                                                         <i data-feather="phone" class="mr-1"></i>
                                                         <span class="card-text user-info-title font-weight-bold mb-0">Parent Phone No</span>
                                                     </div>
-                                                    <p class="card-text mb-0">{{ $student->guardians->p_phone }}</p>
+                                                    <p class="card-text mb-0">+60{{ $student->guardians->p_phone }}</p>
                                                 </div>
                                                 <div class="d-flex flex-wrap my-50">
                                                     <div class="user-info-title">
@@ -534,6 +527,17 @@
                                                     <p class="card-text mb-0">
                                                          @foreach ($student->studentSchoolMany as $school)
                                                             {{ $school->schoolsOne->type }}
+                                                        @endforeach
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex flex-wrap my-50">
+                                                    <div class="user-info-title">
+                                                        <i data-feather="settings" class="mr-1"></i>
+                                                        <span class="card-text user-info-title font-weight-bold mb-0">Academic Level</span>
+                                                    </div>
+                                                    <p class="card-text mb-0">
+                                                         @foreach ($student->profiles->profileEdulevelMany as $edulevel)
+                                                            {{ $edulevel->edulevelsOne->level }}
                                                         @endforeach
                                                     </p>
                                                 </div>

@@ -13,29 +13,30 @@
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/vendors/css/forms/wizard/bs-stepper.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/vendors/css/forms/select/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/themes/bordered-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/themes/bordered-layout.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/plugins/forms/form-validation.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/plugins/forms/form-wizard.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/plugins/forms/form-validation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/app-assets/css/pages/app-user.css')}}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('templates/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('templates/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -74,7 +75,7 @@
                 </li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
                 <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
-                    <div class="search-input">
+                   <div class="search-input">
                         <div class="search-input-icon"><i data-feather="search"></i></div>
                         <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
                         <div class="search-input-close"><i data-feather="x"></i></div>
@@ -256,85 +257,7 @@
             </ul>
         </div>
     </nav>
-    <ul class="main-search-list-defaultlist d-none">
-        <li class="d-flex align-items-center"><a href="javascript:void(0);">
-                <h6 class="section-label mt-75 mb-0">Files</h6>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/xls.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/jpg.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;11kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/pdf.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;150kb</small>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
-                <div class="d-flex">
-                    <div class="mr-75"><img src="../../../app-assets/images/icons/doc.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;256kb</small>
-            </a></li>
-        <li class="d-flex align-items-center"><a href="javascript:void(0);">
-                <h6 class="section-label mt-75 mb-0">Members</h6>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-75"><img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div>
-            </a></li>
-    </ul>
-    <ul class="main-search-list-defaultlist-other-list d-none">
-        <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
-                <div class="d-flex justify-content-start"><span class="mr-75" data-feather="alert-circle"></span><span>No results found.</span></div>
-            </a></li>
-    </ul>
     <!-- END: Header-->
-
 
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
@@ -369,191 +292,51 @@
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
             </ul>
         </div>
-        <div class="shadow-bottom"></div>
+      <div class="shadow-bottom"></div>
         <div class="main-menu-content">
-           <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Room">Room</span></a>   
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Room">Room</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Edulevel">Education level</span></a>   
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Teacher">Student</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
                     <ul class="menu-content">
-                        <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-create"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">Update</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-create"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">Update</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
-                        </li>    
+                        <li class="active"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
+                        </li>
+                     <!--    <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
-    <!--- END: Main Menu-->
+    <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-<div class="app-content content ">
+    <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row"></div>
             <div class="content-body">
-                <!-- Basic multiple Column Form section start -->
-                <section id="multiple-column-form">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Student Information</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form class="form" action ="{{ url('/student-create') }}" method="POST">
-                                         @csrf
-                                        <div class="row">
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="f_name">First Name</label>
-                                                    <input type="text" id="f_name" class="form-control" placeholder="First Name" name="f_name" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="l_name">Last Name</label>
-                                                    <input type="text" id="l_name" class="form-control" placeholder="Last Name" name="l_name" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="ic">IC</label>
-                                                    <input type="int" id="ic" class="form-control" placeholder="IC" name="ic" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="phone">Telephone No</label>
-                                                    <input type="int" id="phone" class="form-control" name="phone" placeholder="Telephone No" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="dob">Date of Birth</label>
-                                                    <input type="date" id="dob" class="form-control" name="dob" placeholder="Date of Birth" />
-                                                </div>
-                                            </div>
-                                           <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="gender">Gender</label>
-                                                    <select class="form-control" id="gender" name="gender">
-                                                        <option value=""></option>
-                                                        <option value="male">Male</option>
-                                                        <option value="female">Female</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="card-header">
-                                                 <h4 class="card-title">Address Information</h4>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="street">Street</label>
-                                                    <input type="text" id="street" class="form-control" name="street" placeholder="Street" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="city">City</label>
-                                                    <input type="text" id="city" class="form-control" name="city" placeholder="City" />
-                                                </div>   
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="state">State</label>
-                                                    <input type="text" id="state" class="form-control" name="state" placeholder="State" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="zipcode">ZipCode</label>
-                                                    <input type="int" id="zipcode" class="form-control" name="zipcode" placeholder="ZipCode" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="country">Country</label>
-                                                    <input type="text" id="country" class="form-control" name="country" placeholder="Country" />
-                                                </div>
-                                            </div>
-                                            <div class="card-header">
-                                              <h4 class="card-title">Parent Information</h4>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="p_name">Parent Name</label>
-                                                    <input type="text" id="p_name" class="form-control" name="p_name" placeholder="Father/Mother Name" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="relationship">Relationship</label>
-                                                    <input type="text" id="relationship" class="form-control" name="relationship" placeholder="Relationship" />
-                                                </div>   
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="p_phone">Phone No</label>
-                                                    <input type="int" id="p_phone" class="form-control" name="p_phone" placeholder="Phone No" />
-                                                </div>
-                                            </div>
-                                            <div class="card-header">
-                                              <h4 class="card-title">School Information</h4>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="s_name">School Name</label>
-                                                    <input type="text" id="s_name" class="form-control" name="s_name" placeholder="School Name" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="type">Type of School</label>
-                                                    <input type="text" id="type" class="form-control" name="type" placeholder="Type of School (SMK/SK)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="edu_id">Academic Level</label>
-                                                    <select class="form-control" id="edu_id" name="edu_id">
-                                                        <option value=""></option>
-                                                        <option value=1>UPSR</option>
-                                                        <option value=2>PT3</option>
-                                                        <option value=3>SPM</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="s_phone">School Phone No</label>
-                                                    <input type="int" id="s_phone" class="form-control" name="s_phone" placeholder="School Phone No" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="year">Year</label>
-                                                    <input type="integer" id="year" class="form-control" name="year" placeholder="Year" />
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                    <div class="card">
+                        <div class="card-datatable table-responsive pt-0">
+                            <table class="user-list-table table" id="dataTable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Academic Level</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
-                </section>
-                <!-- Basic Floating Label Form section end -->
             </div>
-        </div>
     </div>
     <!-- END: Content-->
 
@@ -561,38 +344,51 @@
     <div class="drag-target"></div>
 
     <!-- BEGIN: Vendor JS-->
-    <script src="{{ asset('templates/app-assets/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{ asset('templates/app-assets/vendors/js/forms/wizard/bs-stepper.min.js')}}"></script>
-    <script src="{{ asset('templates/app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
-    <script src="{{ asset('templates/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
-
-
+    <!-- <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('templates/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script> -->
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{ asset('templates/app-assets/js/core/app-menu.js')}}"></script>
-    <script src="{{ asset('templates/app-assets/js/core/app.js')}}"></script>
+    <script src="{{asset('templates/app-assets/js/core/app-menu.js')}}"></script>
+    <script src="{{asset('templates/app-assets/js/core/app.js')}}"></script>
     <!-- END: Theme JS-->
 
-    <!-- BEGIN: Page JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
-     <script src="{{ asset('templates/app-assets/js/scripts/forms/form-wizard.js')}}"></script>
-    <!-- END: Page JS-->
+    <script type="text/javascript">
+        $(document).ready(function()
+         {
+            $('#dataTable').dataTable(
+            {
+                processing: false,
+                serverSide: false,
+                ajax: "{{ route('subject.fetch') }}",
+                columns: 
+                [
+                    { data: 'id'  },
+                    { data: 'name' },
+                    { data: 'description' },
 
-    <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
-            }
-        })
-    </script>
+                    {data: 'action'},
+                ]
+            });
+        });
+    </script>   
 </body>
 <!-- END: Body-->
 
 </html>
+

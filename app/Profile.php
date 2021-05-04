@@ -35,4 +35,15 @@ class Profile extends Model
     {
     	return $this->hasOne('App\Alamat', 'prof_id', 'id');
     }
+
+    public function profileEdulevel()
+    {
+        return $this->hasOne('App\Profiles_edulevel', 'prof_id', 'id');
+    }
+
+    public function profileEdulevelMany()
+    {
+        return $this->hasMany('App\Profiles_edulevel', 'prof_id', 'id');
+    }
+
 }

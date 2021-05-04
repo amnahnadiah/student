@@ -34,16 +34,22 @@
                     <input type="text" name="name" value="{{ $room->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Time:</strong>
-                    <input type="time" name="time" value="{{ $room->time }}" class="form-control" placeholder="Time">
+                    <strong>Start Time:</strong>
+                    <input type="start_time" name="start_time" value="{{ $room->start_time }}" class="form-control" placeholder="Start Time">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Date:</strong>
-                    <input type="date" name="date" value="{{ $room->date }}" class="form-control" placeholder="Date">
+                    <strong>End Time:</strong>
+                    <input type="end_time" name="end_time" value="{{ $room->end_time }}" class="form-control" placeholder="End Time">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Day</strong>
+                    <input type="day" name="day" value="{{ $room->day }}" class="form-control" placeholder="Day">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
