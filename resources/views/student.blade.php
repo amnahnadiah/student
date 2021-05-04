@@ -1,4 +1,4 @@
-@extends('students.create')
+@extends('home')
  
 @section('content')
  

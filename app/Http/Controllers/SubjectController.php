@@ -15,14 +15,11 @@ class SubjectController extends Controller
      */
     public function index()
     {
-         return view('subjects.list');
-        // $subjects = Subject::latest()->paginate(5);
-  
-        // return view('subjects.index',compact('subjects'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('subjects.list');
 
     }
-     public function fetch()
+
+    public function fetch()
     {
         if (request()->ajax())
         {

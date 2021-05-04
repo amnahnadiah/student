@@ -97,7 +97,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Add new teacher</h4>
+                                    <h4 class="card-title">Add information</h4>
                                 </div>
                                 <div class="card-body">
                                     <form class="form" action="{{ url('teacher-add/'.$teacher->id) }}" method="POST">
