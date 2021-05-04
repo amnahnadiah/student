@@ -42,7 +42,7 @@ class SubjectController extends Controller
                 ->addColumn('action', function($row)
                 {
                     $url = url('/');
-                    $actionBtn = '<a href="'.$url.'/subject-show/'.$row->id.'" class="edit btn btn-info btn-sm">View</a>';
+                    $actionBtn = '<a href="'.$url.'/subject-show/'.$row->id.'" class="edit btn btn-smbtn btn-outline-primary round waves-effect">View</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])

@@ -41,7 +41,7 @@
 <!-- BEGIN: Body-->
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
     <!-- BEGIN: Header-->
-    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
+    <!-- <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
         @if (Route::has('login'))
             <div class="navbar-container d-flex content">
                 <ul class="nav navbar-nav align-items-center ml-auto">
@@ -81,7 +81,7 @@
                 </ul>
             </div>
         @endif
-    </nav>
+    </nav> -->
     <!-- END: Header-->
 
     <!-- BEGIN: Main Menu-->
@@ -120,14 +120,14 @@
             </ul>
         </div>
         <div class="shadow-bottom"></div>
-        @if (Route::has('login'))
+        <!-- @if (Route::has('login'))-->
             <div class="main-menu-content">
                 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/admin/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
+                    <li class="nav-item"><a class="d-flex align-items-center" href="{{ route('login') }}"><i data-feather="log-in"></i><span class="menu-title text-truncate" data-i18n="Login">Login</span></a>
                     </li>     
-                    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
+                    <li class="nav-item"><a class="d-flex align-items-center" href="{{ route('register') }}"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Register">Register</span></a>
                     </li>
-                    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="log-in"></i><span class="menu-title text-truncate" data-i18n="Class">Class</span></a>
+                    <!-- <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/room"><i data-feather="log-in"></i><span class="menu-title text-truncate" data-i18n="Class">Class</span></a>
                     </li>
                 
                 @auth
@@ -161,38 +161,64 @@
                                 <li<a class="d-flex align-items-center" href="{{ Request::root() }}/student-create"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">Update</span></a>
                                 </li>
                                 <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
-                                </li>
+                                </li> -->
                                 <!-- <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-show/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">View</span></a>
                                 </li> -->
-                                <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
+                                <!-- <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-edit/{id}"><i data-feather="circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                     @endif
-                @endauth
+                @endauth-->
             </div>
-        @endif
+        <!--@endif -->
     </div>
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
+    <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-body">
                 <!-- Knowledge base Jumbotron -->
-                <section id="knowledge-base-search">
+                <section id="default-divider">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card knowledge-base-bg text-center" style="background-image: url('{{ asset('templates/app-assets/images/avatars/background.jpg') }}')">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Welcome to Tuition Center.</h2>
+                                </div>
                                 <div class="card-body">
-                                    <h1 class="text-primary">Tuition Centre</h1>
+                                    <p class="card-text">This tuition offer to the UPSR, PT3 and SPM student. Please register to know more about this tuition center 👋</p>
+                                        <div class="col-sm-8">
+                                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="{{ asset('templates/app-assets/images/slider/a.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-1" />
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="{{ asset('templates/app-assets/images/slider/b.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-2" />
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="{{ asset('templates/app-assets/images/slider/c.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-3" />
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                    <!-- CrossFade Carousel End -->
                 </section>
                 <!--/ Knowledge base Jumbotron -->
             </div>

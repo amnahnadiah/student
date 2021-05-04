@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('layouts.adminview');
+        return view('admin');
     }
 
     public function teacher()

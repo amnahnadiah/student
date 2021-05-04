@@ -76,9 +76,8 @@ class TeacherController extends Controller
                 ->addColumn('action', function($row)
                 {
                     $url = url('/');
-                    $actionBtn = '<a href="'.$url.'/teacher-newinfo/'.$row->id.'" class="edit btn btn-success btn-sm">Add</a>
-                                    <a href="'.$url.'/teacher-show/'.$row->id.'" class="edit btn btn-info btn-sm">View</a>
-                                    <a href="'.$url.'/teacher-destroy/'.$row->id.'" class="edit btn btn-danger btn-sm">Delete</a>';
+                    $actionBtn = '<a href="'.$url.'/teacher-show/'.$row->id.'" class="edit btn btn-smbtn btn-outline-primary round waves-effect">View</a>
+                                    <a href="'.$url.'/teacher-destroy/'.$row->id.'" class="edit btn btn-smbtn btn-outline-danger round waves-effect">Delete</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])

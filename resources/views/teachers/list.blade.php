@@ -96,7 +96,7 @@
             <!-- list section start -->
             <div class="card">
                 <div class="card-datatable table-responsive pt-0">
-                    <table class="user-list-table table" id="dataTable">
+                    <table class="user-list-table table" id="dataTableTeacher">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -151,7 +151,7 @@
 <script type="text/javascript">
     $(document).ready(function() 
     {
-        $('#dataTable').dataTable(
+        $('#dataTableTeacher').dataTable(
         {
             processing: false,
             serverSide: false,

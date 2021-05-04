@@ -31,6 +31,11 @@ class Profile extends Model
         return $this->hasMany('App\Student', 'prof_id','id');
     }
 
+    public function profileStudent()
+    {
+        return $this->hasOne('App\Student', 'prof_id','id');
+    }
+
     public function alamats()
     {
     	return $this->hasOne('App\Alamat', 'prof_id', 'id');

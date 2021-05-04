@@ -109,8 +109,8 @@
                                                     <span class="card-text">{{ $teacher->status }}</span>
                                                 </div>
                                                 <div class="demo-inline-spacing">
-                                                    <a href="{{ Request::root() }}/teacher-edit/{{ $teacher->id }}" class="edit btn btn-success">Edit</a>
-                                                    <a href="{{ Request::root() }}/teacher" class="edit btn btn-primary">Back</a>
+                                                    <a href="{{ Request::root() }}/teacher-edit/{{ $teacher->id }}" class="edit btn btn-smbtn btn-outline-success round waves-effect">Edit</a>
+                                                    <a href="{{ Request::root() }}/teacher" class="edit btn btn-smbtn btn-outline-dark round waves-effect">Back</a>
                                                 </div>
                                             </div>
                                         </div>
