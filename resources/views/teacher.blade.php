@@ -12,19 +12,22 @@
 @section('teachermainmenu')
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
     <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
-    </li>   
-    <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
-        <ul class="menu-content">
-            <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">Create</span></a>
-            </li>
-            <li><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
-            </li>
-        </ul>
+    </li>
+    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
+    </li>
+    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
     </li>
     <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
     </li>
-    
-    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
+    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/class"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Class">Class</span></a>
+    </li>
+    <li class=" nav-item">
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>{{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </li>
 </ul>
 @endsection
@@ -57,7 +60,6 @@
                                                 </div>
                                                 <div class="demo-inline-spacing">
                                                     <a href="{{ Request::root() }}/teacher-edit/{{ Auth::user()->userProfile->profileTeacher->id }}" class="edit btn btn-smbtn btn-outline-success round waves-effect">Edit</a>
-                                                    <a href="{{ Request::root() }}/teacher" class="edit btn btn-smbtn btn-outline-dark round waves-effect">Back</a>
                                                 </div>
                                             </div>
                                         </div>

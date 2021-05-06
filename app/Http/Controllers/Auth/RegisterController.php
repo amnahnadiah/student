@@ -32,7 +32,7 @@ class RegisterController extends Controller
     protected function redirectTo()
     {
         if(auth()->user()->is_student == 1){
-            return 'student/routes';
+            return 'student-create';
         }
     }
 

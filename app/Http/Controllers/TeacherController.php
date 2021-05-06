@@ -77,7 +77,7 @@ class TeacherController extends Controller
                 {
                     $url = url('/');
                     $actionBtn = '<a href="'.$url.'/teacher-show/'.$row->id.'" class="edit btn btn-smbtn btn-outline-primary round waves-effect">View</a>
-                                    <a href="'.$url.'/teacher-destroy/'.$row->id.'" class="edit btn btn-smbtn btn-outline-danger round waves-effect">Delete</a>';
+                                <a href="'.$url.'/teacher-destroy/'.$row->id.'" class="edit btn btn-smbtn btn-outline-danger round waves-effect">Delete</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -124,6 +124,15 @@ class TeacherController extends Controller
         $gender = $request->input('gender');
         $status = $request->input('status');
         $is_teacher = $request->input('is_teacher');
+        $street = $request->input('street');
+        $city = $request->input('city');
+        $state = $request->input('state');
+        $zipcode = $request->input('zipcode');
+        $country = $request->input('country');
+        $s_name = $request->input('s_name');
+        $type = $request->input('type');
+        $year = $request->input('year');
+        $acad_level = $request->input('acad_level');
         
         $user = new User;
         $user->username = $username;
@@ -145,7 +154,33 @@ class TeacherController extends Controller
                 $teacher->gender = $gender;
                 $teacher->status = $status;
                 $teacher->prof_id = $profile->id;
-                $teacher->save();
+                if($teacher->save())
+                {
+                    $school = new School;
+                    $school->s_name = $s_name;
+                    $school->type = $type;
+                    $school->year = $year;
+                    $school->acad_level = $acad_level;
+                    if($school->save())
+                    {
+                        $teachersSchool = new Teachers_school;
+                        $teachersSchool->teacher_id = $teacher->id;
+                        $teachersSchool->school_id = $school->id;
+                        if($teachersSchool->save())
+                        {
+                            $prof_id = $teacher->teacherProfile->id;
+                            $profile = Profile::find($prof_id);
+                            $alamat = new Alamat;
+                            $alamat->prof_id = $profile->id;
+                            $alamat->street = $street;
+                            $alamat->city = $city;
+                            $alamat->state = $state;
+                            $alamat->zipcode = $zipcode;
+                            $alamat->country = $country;
+                            $alamat->save();
+                        }
+                    }
+                }
             }
         }
         
@@ -164,60 +199,6 @@ class TeacherController extends Controller
 
         return redirect()->route('teacher')
                         ->with('success','Teacher created successfully.');
-    }
-
-    public function new($id)
-    {
-        $teacher = Teacher::find($id);
-        
-        return view('teachers.add',[
-            'id' => $id,
-            'teacher' => $teacher,
-        ]);
-    }
-
-    public function add(Request $request, $id)
-    {
-        $street = $request->input('street');
-        $city = $request->input('city');
-        $state = $request->input('state');
-        $zipcode = $request->input('zipcode');
-        $country = $request->input('country');
-        $s_name = $request->input('s_name');
-        $type = $request->input('type');
-        $year = $request->input('year');
-        $acad_level = $request->input('acad_level');
-
-        $teacher = Teacher::find($id);
-        $school = new School;
-        $school->s_name = $s_name;
-        $school->type = $type;
-        $school->year = $year;
-        $school->acad_level = $acad_level;
-        if($school->save())
-        {
-            $teachersSchool = new Teachers_school;
-            $teachersSchool->teacher_id = $teacher->id;
-            $teachersSchool->school_id = $school->id;
-            if($teachersSchool->save())
-            {
-                $prof_id = $teacher->teacherProfile->id;
-                $profile = Profile::find($prof_id);
-                $alamat = new Alamat;
-                $alamat->prof_id = $profile->id;
-                $alamat->street = $street;
-                $alamat->city = $city;
-                $alamat->state = $state;
-                $alamat->zipcode = $zipcode;
-                $alamat->country = $country;
-                $alamat->save();
-            }
-        }
-
-        return redirect()->route('teacher',[
-                                        'id' => $id,
-                                    ])
-                            ->with('success','Teacher updated successfully');
     }
     /**
      * Display the specified resource.
@@ -340,10 +321,10 @@ class TeacherController extends Controller
                 }
             }
         }
-        return redirect()->route('teacher',[
-                                    'id' => $id,
-                                ])
-                        ->with('success','Teacher updated successfully');
+        return view('teacher',[
+            'id' => $id,
+            'teacher' => $teacher,
+        ]);
     }
 
     /**

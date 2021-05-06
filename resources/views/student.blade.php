@@ -9,22 +9,23 @@
 </a>
 @endsection
 
-@section('teachermainmenu')
+@section('studentmainmenu')
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
     <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/student/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
-    </li>   
-    <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
-        <ul class="menu-content">
-            <li><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="circle"></i><span class="menu-item" data-i18n="View">Create</span></a>
-            </li>
-            <li><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher"><i data-feather="circle"></i><span class="menu-item" data-i18n="List">List</span></a>
-            </li>
-        </ul>
+    </li>
+    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
     </li>
     <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
     </li>
-    
-    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
+    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/class"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Class">Class</span></a>
+    </li>
+    <li class=" nav-item">
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>{{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </li>
 </ul>
 @endsection
@@ -56,7 +57,6 @@
                                                 </div>
                                                 <div class="demo-inline-spacing">
                                                     <a href="{{ Request::root() }}/student-edit/{{ Auth::user()->userProfile->profileStudent->id }}" class="edit btn btn-smbtn btn-outline-success round waves-effect">Edit</a>
-                                                    <a href="{{ Request::root() }}/student" class="edit btn btn-smbtn btn-outline-dark round waves-effect">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,79 +65,75 @@
                                 <div class="col-xl-8 col-lg-12 mt-2 mt-xl-0">
                                     <div class="user-info-wrapper">
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="user" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Name</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->f_name }} {{ Auth::user()->userProfile->l_name }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="check" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">NRIC</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->ic }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="phone" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Telephone No</span>
                                             </div>
-                                            <p class="card-text mb-0">{{ Auth::user()->userProfile->phone }}</p>
+                                            <p class="card-text mb-0">+60{{ Auth::user()->userProfile->phone }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="search" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Date of Birth</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->dob }}</p>
                                         </div>
-                                        <div class="d-flex flex-wrap">
-                                            <div class="user-info-title">
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="meh" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Gender</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->profileStudent->gender }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="map-pin" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Address</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->street }}</p>
                                         </div>
-                                            <div class="d-flex flex-wrap">
-                                            <div class="user-info-title"></div>
-                                            <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->zipcode }}</p>
-                                        </div>
-                                        <div class="d-flex flex-wrap">
-                                            <div class="user-info-title"></div>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title col-lg-4"></div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->city }}</p>
                                         </div>
-                                        <div class="d-flex flex-wrap">
-                                            <div class="user-info-title"></div>
-                                            <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->state }}</p>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title col-lg-4"></div>
+                                            <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->zipcode }} {{ Auth::user()->userProfile->alamats->state }}</p>
                                         </div>
-                                        <div class="d-flex flex-wrap">
-                                            <div class="user-info-title"></div>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title col-lg-4"></div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->alamats->country }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="zap" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Parent Name</span>
                                             </div>
                                             <p class="card-text mb-0">{{ Auth::user()->userProfile->profileStudent->guardians->p_name }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="phone" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Parent Phone No</span>
                                             </div>
-                                            <p class="card-text mb-0">{{ Auth::user()->userProfile->profileStudent->guardians->p_phone }}</p>
+                                            <p class="card-text mb-0">+60{{ Auth::user()->userProfile->profileStudent->guardians->p_phone }}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="target" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">School Name</span>
                                             </div>
@@ -147,18 +143,18 @@
                                                 @endforeach</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="phone" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">School Phone No</span>
                                             </div>
                                             <p class="card-text mb-0">
                                                 @foreach (Auth::user()->userProfile->profileStudent->studentSchoolMany as $school)
-                                                    {{ $school->schoolsOne->s_phone }}
+                                                    +60{{ $school->schoolsOne->s_phone }}
                                                 @endforeach 
                                             </p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="settings" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">School Type</span>
                                             </div>
@@ -169,7 +165,7 @@
                                             </p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title col-lg-4">
                                                 <i data-feather="settings" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">Year</span>
                                             </div>
