@@ -11,9 +11,7 @@
 
 @section('adminmainmenu')
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-    <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/teacher/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
-    </li>     
-    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
+    <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/admin/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
     </li>
     <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Teacher">Teacher</span></a>
         <ul class="menu-content">
@@ -23,7 +21,21 @@
             </li>
         </ul>
     </li>
+    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/student-index"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Student">Student</span></a>
+    </li>
     <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/edulevel"><i data-feather="award"></i><span class="menu-title text-truncate" data-i18n="Education Level">Education Level</span></a>
+    </li>
+    <li class="nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/subject"><i data-feather="book"></i><span class="menu-title text-truncate" data-i18n="Subject">Subject</span></a>
+    </li>
+    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/class"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Class">Class</span></a>
+    </li>
+    <li class=" nav-item">
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>{{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </li>
 </ul>
 @endsection
@@ -41,6 +53,9 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">List Teachers</h4>
+                    </div>
+                    <div class="col-8">
+                        <a href="{{ Request::root() }}/teacher-create" class="edit btn btn-smbtn btn-outline-dark round waves-effect">Add new Teacher</a>
                     </div>
                     <div class="card-datatable table-responsive pt-0">
                         <table class="user-list-table table" id="dataTableTeacher">

@@ -71,7 +71,8 @@ class StudentController extends Controller
                 ->addColumn('action', function($row)
                 {
                     $url = url('/');
-                    $actionBtn = '<a href="'.$url.'/student-show/'.$row->id.'" class="btn btn-outline-info round">View</a>';
+                    $actionBtn = '<a href="'.$url.'/student-show/'.$row->id.'" class="btn btn-outline-info round">View</a>
+                                <a href="'.$url.'/student-destroy/'.$row->id.'" class="edit btn btn-smbtn btn-outline-danger round waves-effect">Delete</a>';
                                
                     return $actionBtn;
                 })
@@ -338,11 +339,10 @@ class StudentController extends Controller
                 }
             }        
  
-        return redirect()->route('student',[
-                                    'id' => $id,
-                                    // 'student' => $model,
-                                ])
-                        ->with('success','Student updated successfully');
+        return view('student',[
+            'id' => $id,
+            'student' => $student,
+        ]);
     }
 
     /**
