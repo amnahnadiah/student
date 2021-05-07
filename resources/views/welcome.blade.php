@@ -9,7 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Knowledge Base - Vuexy - Bootstrap HTML admin template</title>
+    <title>Tuition Center</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -190,28 +190,26 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="card-text">This tuition offer to the UPSR, PT3 and SPM student. Please register to know more about this tuition center 👋</p>
-                                        <div class="col-sm-8">
-                                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="{{ asset('templates/app-assets/images/slider/a.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-1" />
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="{{ asset('templates/app-assets/images/slider/b.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-2" />
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="{{ asset('templates/app-assets/images/slider/c.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-3" />
-                                                    </div>
+                                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{{ asset('templates/app-assets/images/banner/a.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-1" />
                                                 </div>
-                                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
+                                                <div class="carousel-item">
+                                                    <img src="{{ asset('templates/app-assets/images/banner/b.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-2" />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{{ asset('templates/app-assets/images/banner/c.jpg') }}" class="img-fluid d-block w-100" alt="cf-img-3" />
+                                                </div>
                                             </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -231,7 +229,7 @@
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+        <p class="clearfix mb-0"><span class="float-md-right d-none d-md-block">Made by Amnah and Roby<i data-feather="smile"></i></span></p>
     </footer>
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
     <!-- END: Footer-->
