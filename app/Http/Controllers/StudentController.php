@@ -164,28 +164,28 @@ class StudentController extends Controller
                         $studentSchool->school_id = $school->id;
                         if($studentSchool->save())
                         {
-                                $profEdulevel = new Profiles_edulevel;
-                                $profEdulevel->prof_id = $profile->id;
-                                $profEdulevel->edu_id = $edu_id;
-                                if($profEdulevel->save())
+                            $profEdulevel = new Profiles_edulevel;
+                            $profEdulevel->prof_id = $profile->id;
+                            $profEdulevel->edu_id = $edu_id;
+                            if($profEdulevel->save())
+                            {
+                                $guardian = new guardian;
+                                $guardian->p_name = $p_name;
+                                $guardian->relationship = $relationship;
+                                $guardian->p_phone = $p_phone;
+                                $guardian->stud_id = $student->id;
+                                if($guardian->save())
                                 {
-                                    $guardian = new guardian;
-                                    $guardian->p_name = $p_name;
-                                    $guardian->relationship = $relationship;
-                                    $guardian->p_phone = $p_phone;
-                                    $guardian->stud_id = $student->id;
-                                    if($guardian->save())
-                                    {
-                                        $alamat = new alamat;
-                                        $alamat->prof_id = $profile->id;
-                                        $alamat->street = $street;
-                                        $alamat->city = $city;
-                                        $alamat->state = $state;
-                                        $alamat->zipcode = $zipcode;
-                                        $alamat->country = $country;
-                                        $alamat->save();
-                                    }
+                                    $alamat = new alamat;
+                                    $alamat->prof_id = $profile->id;
+                                    $alamat->street = $street;
+                                    $alamat->city = $city;
+                                    $alamat->state = $state;
+                                    $alamat->zipcode = $zipcode;
+                                    $alamat->country = $country;
+                                    $alamat->save();
                                 }
+                            }
                        }
 
                     }

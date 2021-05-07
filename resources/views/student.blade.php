@@ -9,7 +9,7 @@
 </a>
 @endsection
 
-@section('teachermainmenu')
+@section('studentmainmenu')
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
     <li class="active nav-item"><a class="d-flex align-items-center" href="{{ Request::root() }}/student/routes"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
     </li>   

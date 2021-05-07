@@ -409,7 +409,6 @@
                                         <div class="col-xl-4 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
                                             <div class="user-avatar-section">
                                                 <div class="d-flex justify-content-start">
-                                                    <img class="img-fluid rounded" src="../../../app-assets/images/avatars/7.png" height="104" width="104" alt="User avatar" />
                                                     <div class="d-flex flex-column ml-1">
                                                         <div class="user-info mb-1">
                                                             <h4 class="mb-0">{{ $student->profiles->f_name }}</h4>

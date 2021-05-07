@@ -175,14 +175,14 @@
                     <div class="blog-list-wrapper">
                         <!-- Blog List Items -->
                         <div class="row">
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-4">
                                 <div class="card">
                                     <a href="{{ Request::root() }}/subject">
                                         <img class="card-img-top img-fluid" src="{{ asset ('templates/app-assets/images/slider/upsr.jpg')}}" alt="UPSR" />
                                     </a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="{{ Request::root() }}/room-create" class="blog-title-truncate text-body-heading">UPSR Subjects</a>
+                                            <a href="{{ Request::root() }}/subject" class="blog-title-truncate text-body-heading">UPSR Subjects</a>
                                         </h4>
                                         <p class="card-text blog-content-truncate">
                                            Subjects for UPSR students.
@@ -195,19 +195,19 @@
                                                     <span class="text-body font-weight-bold">76 Comments</span>
                                                 </div>
                                             </a>
-                                            <a href="{{ Request::root() }}/room-create" class="font-weight-bold">Explore More</a>
+                                            <a href="{{ Request::root() }}/subject" class="font-weight-bold">Explore More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-4">
                                 <div class="card">
-                                    <a href="{{ Request::root() }}/room-create">
+                                    <a href="{{ Request::root() }}/subject">
                                         <img class="card-img-top img-fluid" src="{{ asset ('templates/app-assets/images/slider/pt3.jpg')}}" alt="PT3" />
                                     </a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="{{ Request::root() }}/room-create" class="blog-title-truncate text-body-heading">PT3 Subjects</a>
+                                            <a href="{{ Request::root() }}/subject" class="blog-title-truncate text-body-heading">PT3 Subjects</a>
                                         </h4>
                                         <p class="card-text blog-content-truncate">
                                             Subjects for PT3 Students
@@ -220,19 +220,19 @@
                                                     <span class="text-body font-weight-bold">2.1k Comments</span>
                                                 </div>
                                             </a>
-                                            <a href="{{ Request::root() }}/room-create" class="font-weight-bold">Explore More</a>
+                                            <a href="{{ Request::root() }}/subject" class="font-weight-bold">Explore More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-4">
                                 <div class="card">
-                                    <a href="{{ Request::root() }}/room-create">
+                                    <a href="{{ Request::root() }}/subject">
                                         <img class="card-img-top img-fluid" src="{{ asset ('templates/app-assets/images/slider/spm.jpg')}}" alt="SPM" />
                                     </a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="{{ Request::root() }}/room-create" class="blog-title-truncate text-body-heading">SPM Subjects</a>
+                                            <a href="{{ Request::root() }}/subject" class="blog-title-truncate text-body-heading">SPM Subjects</a>
                                         </h4>
                                         <p class="card-text blog-content-truncate">
                                             Subjects for SPM students
@@ -245,7 +245,7 @@
                                                     <span class="text-body font-weight-bold">243 Comments</span>
                                                 </div>
                                             </a>
-                                            <a href="{{ Request::root() }}/room-create" class="font-weight-bold">Explore More</a>
+                                            <a href="{{ Request::root() }}/subject" class="font-weight-bold">Explore More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -260,19 +260,6 @@
             <div class="sidebar-detached sidebar-right">
                 <div class="sidebar">
                     <div class="blog-sidebar my-2 my-lg-0">
-                        <!-- Search bar -->
-                        <div class="blog-search">
-                            <div class="input-group input-group-merge">
-                                <input type="text" class="form-control" placeholder="Search here" />
-                                <div class="input-group-append">
-                                    <span class="input-group-text cursor-pointer">
-                                        <i data-feather="search"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Search bar -->
-
                         <!-- Recent Posts -->
                         <div class="blog-recent-posts mt-3">
                             <h6 class="section-label">Student Feedback</h6>
@@ -324,74 +311,6 @@
                             </div>
                         </div>
                         <!--/ Recent Posts -->
-
-                        <!-- Categories -->
-                        <div class="blog-categories mt-3">
-                            <h6 class="section-label">Categories</h6>
-                            <div class="mt-1">
-                                <div class="d-flex justify-content-start align-items-center mb-75">
-                                    <a href="javascript:void(0);" class="mr-75">
-                                        <div class="avatar bg-light-primary rounded">
-                                            <div class="avatar-content">
-                                                <i data-feather="watch" class="avatar-icon font-medium-1"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="blog-category-title text-body">Fashion</div>
-                                    </a>
-                                </div>
-                                <div class="d-flex justify-content-start align-items-center mb-75">
-                                    <a href="javascript:void(0);" class="mr-75">
-                                        <div class="avatar bg-light-success rounded">
-                                            <div class="avatar-content">
-                                                <i data-feather="shopping-cart" class="avatar-icon font-medium-1"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="blog-category-title text-body">Food</div>
-                                    </a>
-                                </div>
-                                <div class="d-flex justify-content-start align-items-center mb-75">
-                                    <a href="javascript:void(0);" class="mr-75">
-                                        <div class="avatar bg-light-danger rounded">
-                                            <div class="avatar-content">
-                                                <i data-feather="command" class="avatar-icon font-medium-1"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="blog-category-title text-body">Gaming</div>
-                                    </a>
-                                </div>
-                                <div class="d-flex justify-content-start align-items-center mb-75">
-                                    <a href="javascript:void(0);" class="mr-75">
-                                        <div class="avatar bg-light-info rounded">
-                                            <div class="avatar-content">
-                                                <i data-feather="hash" class="avatar-icon font-medium-1"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="blog-category-title text-body">Quote</div>
-                                    </a>
-                                </div>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <a href="javascript:void(0);" class="mr-75">
-                                        <div class="avatar bg-light-warning rounded">
-                                            <div class="avatar-content">
-                                                <i data-feather="video" class="avatar-icon font-medium-1"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="blog-category-title text-body">Video</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Categories -->
                     </div>
 
                 </div>
