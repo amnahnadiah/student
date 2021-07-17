@@ -16,6 +16,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 Route::get('student/routes', 'HomeController@student')->middleware('student');

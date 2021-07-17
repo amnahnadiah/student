@@ -41,7 +41,7 @@
                 </div>
             </div>
             
-            <button type="submit" class="btn btn-primary btn-block" tabindex="4">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block" tabindex="4">Log in</button>
         </form>
         <p class="text-center mt-2"><span>New on our platform?</span><a href="{{ route('register') }}"><span>&nbsp;Create an account</span></a></p>
     </div>
